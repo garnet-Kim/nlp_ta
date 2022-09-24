@@ -1,0 +1,156 @@
+---
+title: "샘플 웹 사이트 개발하기"
+description: |
+  텍스트 분석의 실마리를 찾기 위해서 텍스트 데이터를 탐색합니다. 여기에는 데이터의 품질을 보정하기 위한 관점도 포함되어 있습니다.
+author:
+  - name: 유충현 
+    url: https://choonghyunryu.github.io/
+    affiliation: 한국 R 사용자회
+    affiliation_url: https://r2bit.com/
+  - name: 홍길동 
+    affiliation: 한국 R 사용자회
+    affiliation_url: https://r2bit.com/
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE, 
+                      warning = FALSE, 
+                      collapse = FALSE,
+                      fig.align = "center",
+                      tidy.opts = list(width.cutoff = 70), 
+                      tidy = TRUE)
+knitr::opts_chunk$set(fig.width = 12, fig.height = 9)
+
+library(shiny, warn.conflicts = FALSE)
+library(dplyr, warn.conflicts = FALSE)
+library(ggplot2, warn.conflicts = FALSE)
+
+xaringanExtra :: use_panelset()
+```
+
+
+```{r}
+#| intro, 
+#| echo=FALSE, 
+#| out.width = "65%"
+knitr::include_graphics("img/text.jpg")
+```
+
+
+```{r, preface, echo=FALSE}
+div(class = "preface", 
+    h4("들어가기"),
+    "이 웹 사이트는 예제를 위해서 만든 간단한 사이트입니다.", br(),
+    "여러분은 이 Skelton 사이트에 살을 붙여서 자신의 웹 사이트를 만들 수 있습니다. 그리고 이 작업은 사이트의 구조를 이해하는 것으로부터 시작됩니다.")
+```
+
+<br>
+
+## 설정사항
+
+### 수정해야할 사항
+
+본 템플리트는 웹 사이트 중의 한 페이지로 **bitReport website**라는 이름의 예제입니다. 환경 설정파일인 `_site.yml`에 "샘플 웹 사이트"이라는 제목으로 연결되어 있습니다. 만약에 예제 템플리트를 완성하려면 이 페이지의 이름을 `_site.yml`에서의 **create_website**과 동일하게 설정해야 합니다.
+
+### 웹 사이트 구성 파일
+
+웹 사이트를 구성하는 설정은 구성파일인 **_site.yml**에 정의합니다.
+
+_site.yml 파일에서의 사용자가 설정해야할 항목은 다음과 같습니다.
+
+* name: 웹 사이트의 이름
+    - 헤더의 네비게이션 바의 왼쪽에 링크표시됩니다.
+* title: 웹 사이트의 타이틀
+    - 헤더의 네비게이션 바의 왼쪽에 링크표시됩니다.    
+* description: 웹 사이트의 설명
+* output_dir: 생성될 웹 사이트의 정적 HTML이 저장될 디렉토리
+    - "docs"로 기본설정됩니다. 이 디렉토리는 github page로 deploy할 때 유용합니다.
+* navbar: 웹 사이트의 메뉴를 정의하는 섹션입니다. 
+    - 수정하지 않습니다.
+* right: 웹 사이트의 메뉴를 정의합니다.    
+    - **text**는 메뉴 이름입니다.
+    - **href**는 메뉴와 연결할 웹 페이지입니다. 확장자는 html입니다. 
+        - R markdown 파일과 동일하게 이름을 부여합니다.
+    - **menu**는 서브메뉴를 정의합니다.    
+    - 빈 분리자를 만들기 위해서는 "- text: "---"를 사용합니다.
+* output: 웹 사이트 출력에 대한 설정입니다. 사용자가 수정하지 않습니다.
+
+### 개별 페이지 구성 정보
+
+개별 페이지를 구성하기 위해서는 knitr YAML을 수정해야 합니다.
+
+* title: 웹 페이지 제목입니다.
+* description: 웹 페이지를 간단하게 소개하는 소개문입니다.
+* author: 웹 페이지 컨텐츠 저작자 정보를 기술합니다.
+    - name: 저작자 이름
+    - url: 저작자 개인 홈페이지 URL
+    - affiliation: 저작자 소속 회사/부서
+    - affiliation_url: 저작자 소속 회사/부서 홈페이지 URL
+* date: 컨텐츠를 생성한 날짜
+* output: 웹 사이트 출력에 대한 설정입니다.
+    - toc: 목차를 출력할 지의 여부를 정의합니다. true이면 출력합니다.
+    - toc_depth: 출력할 목차의 depth를 정의합니다. 3이면 3 depth까지 표시합니다.  
+
+> 이 예제 웹 사이트는 하나의 완성된 페이지를 만드는 것이 아닌, 가상의 site를 담은 Skelton만 제공합니다. 그러므로 개별 페이지의 내용에 신경쓸 필요가 없습니다.
+
+## Data: USArrests
+
+`USArrests`는 미국 주별 강력 범죄율을 기록한 데이터입니다.
+
+이 데이터셋은 4개의 변수와 50개의 관측치로 구성된 데이터 프레임(data.frame) 객체입니다.:
+
+* Murder
+    - numeric. 살인범 검거 건수(100,000건당)
+* Assault
+    - numeric. 폭행범 검거 건수(100,000건당)
+* UrbanPop
+    - numeric. 도시 인구 비율(백분율)
+* Rape
+    - numeric. 강간범 검거 건수(100,000건당)    
+
+
+```{r import_data, warning=FALSE}
+# code here
+```
+
+## 표(tables) 출력
+
+미국 주별 강력 범죄율을 기록한 데이터인 USArrests를 표로 출력합니다.
+
+```{r, usa-arrests}
+USArrests %>% 
+  tibble::rownames_to_column("주 (State)") %>% 
+  arrange(desc(Murder + Assault + Rape)) %>% 
+  filter(row_number() <= 10) %>% 
+  select(1:3, 5, 4) %>% 
+  rename(`살인범` = Murder) %>% 
+  rename(`폭행범` = Assault) %>% 
+  rename(`강간범` = Rape) %>% 
+  rename(`도시인구수(백분율)` = UrbanPop) %>%   
+  kableExtra::kbl(
+    caption = "미국 범죄 상위 10개 주 현황",
+    format.args = list(big.mark = ",", digits = 1, scientific = 6)
+  ) %>% 
+  kableExtra::kable_styling(bootstrap_options = c("striped", "hover")) %>% 
+  kableExtra::add_header_above(c(" " = 1, "범죄자수 (인구 만명 당)" = 3, " " = 1)) %>% 
+  kableExtra::kable_classic(full_width = TRUE) 
+```
+
+
+## 플롯(plots) 출력
+
+이 예제는 가상의 설명을 포함하고 있는, 그저 템플리트를 위한 예제입니다. 
+
+온도에 따른 수은의 증기압을 기록한 데이터인 pressure 데이터 프레임을 산점도록 시각화합니다.
+
+```{r plot-density, fig.height=5, fig.width=7, warning=FALSE, fig.cap="플롯 예제"}
+plot(pressure, pch = 16, main = "Relation between temperature and pressure")
+lines(loess(pressure ~ temperature, pressure), col = "steelblue")
+```
+

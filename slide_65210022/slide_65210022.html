@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>텍스트 데이터에서 화자의 의도 파악하기</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="김동수" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# 텍스트 데이터에서 화자의 의도 파악하기
+]
+.subtitle[
+## - 사례를 중심으로<br><br>
+]
+.author[
+### <a href="https://garnet-Kim.github.io/">김동수</a>
+]
+
+---
+
+
+
+
+
+layout: true
+  
+&lt;div class="my-footer"&gt;
+&lt;span&gt;
+&lt;a href="https://r2bit.com/" target="_blank"&gt;한국 R 사용자회&lt;/a&gt;
+&lt;/span&gt;
+&lt;/div&gt; 
+
+---
+
+
+
+## Executive Summary
+
+
+.pull-left-wide[
+**Q - GIS 분석 모델의 가능성은 무엇인가요?**  
+- EDA와 분석 모델을 통해서 **9개의 테마에서 여러 변수가 수익에 유의한 영향**을 끼친다는 사실 확인.
+- 특정 연령, 특정 상품이 수익과 밀접하다는 사실을 통해, **GIS 정보가 '마케팅 전략' 수립 영역에서도 활용 가능**하다는 사실 확인.
+
+**Q - GIS 분석 모델의 활용 방안은 무엇인가요?**  
+- GIS 기반의 다양한 데이터를 활용한다면, **고도화된 최적 가맹점 입지선정 모델**의 개발 가능성 확인
+- 모델이 정교하된다면, **점장의 KPI 척도나 목표치 달성 플랜** 등 가맹점의 운영 방향과 성장 가능성에 대한 정보 제공 가능
+
+]
+
+---
+
+class: middle
+
+# 텍스트 분석이란 무엇일까?
+
+---
+
+class: middle
+
+# .hand[We...]
+
+.huge[.green[have]] .hand[카페/블로그/뉴스에서 수집한 텍스트 데이터]
+
+.huge[.pink[want]] .hand[우아한 머신러닝, 팬시한 결과, 감탄할 인사이트]
+
+---
+
+## 대중적인 텍스트 분석의 자화상!!! 
+
+.pull-left[
+&lt;img src="img/SNS.png" width="50%" style="display: block; margin: auto;" /&gt;
+- **SNS에서 수집된 데이터**
+- 개인정보보호 강화로 쪼그라드는 데이터
+- 그래도 너가 있어서 다행이다.
+]
+.pull-right[
+&lt;img src="img/wordcloud.png" width="50%" style="display: block; margin: auto;" /&gt;
+- 데이터 시각화, 그 이름은 **WordCloud**
+- 빈도분석 중심의 개괄적인 이해
+- 음, 그렇구나. 그래서 어쩌라구요?
+]
+
+---
+
+## 분석이라 쓰고 노가다라 읽습니다!!!
+
+.small[
+
+]
+
+.tip[
+하루 종일 **텍스트를 탐색하며, 정제하고 분석의 실마리를 위한 패턴을 찾고**...&lt;br&gt;
+오늘도 그리고 내일도 또...&lt;br&gt;
+분석의 수율을 높이기 위해서 대충할 수 없는, 아 **텍스트 전처리 작업**. 
+]
+
+&lt;img src="img/compare_method.png" width="95%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## 그래도 훌륭한 정보를 얻을 수 있습니다!!!
+
+.tip[
+텍스트분석은 분석 방법과 투입 리소스 대비 **수율이 높은 분석은 아닙**니다.&lt;br&gt;
+그래도, 없는 것보다 있는 것이 낫다고요?&lt;br&gt;
+아닙니다. **유용한 인사이트를 도출한 사례**도 제법 있습니다. 
+]
+
+
+.small[
+&lt;br&gt;
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; 분석 주제 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; 주된 분석 방법 &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; 활용 사례 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 문서 분류(Document Texonomy) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Patthern &amp;amp; Rule &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 상담 콜 분류 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 문서 분류(Document Classification) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Machine Laerning &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 상담 콜 민원 예측 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 주제 발견(Topic discovery) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; LDA topic analysis &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 상담 콜 분류 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 감정 분석(Sentiment analysis) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 감성사전, Machine Laerning &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 긍부정 상담 콜 분석 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 문서 요약(Document summarization) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Text Rank &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; QA를 위한 상담콜 요약 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+
+---
+
+class: middle
+
+# 텍스트 분석이란 이런 것이다!
+
+---
+
+class: middle
+
+# .hand[We...]
+
+.huge[.green[have]] .hand[텍스트 데이터와 관련 정형데이터]
+
+.huge[.pink[want]] .hand[텍스트에 내포된 화자의 의도 패턴을 활용 목적에 맞게 이해]
+
+---
+
+class: middle
+
+# 데이터 시각화
+
+---
+
+## Anscombe의 네개 데이터 시각화
+
+&lt;img src="slide_65210022_files/figure-html/quartet-plot-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## 첫 키스 연령
+
+.question[ 
+몇살 때 첫 키스를 했습니까?
+]
+
+&lt;img src="slide_65210022_files/figure-html/unnamed-chunk-7-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## 페이스북 방문
+
+.question[ 
+페이스북 방문 회수의 하한과 상한은 어떻게 표현할까요?
+]
+
+&lt;img src="slide_65210022_files/figure-html/unnamed-chunk-8-1.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: middle
+
+# 데이터 조작 문법
+
+---
+
+## 데이터 조작 문법이란...
+
+... 데이터프레임을 조작하는 **동사로서의 기능 개념**에 기반함
+
+.pull-left[
+&lt;img src="img/dplyr-part-of-tidyverse.png" width="70%" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+.midi[
+- `select`: 이름과 인덱스로 컬럼을 선택
+- `arrange`: 행의 순서를 바꿈, Sort
+- `slice`: 인덱스를 사용해서 행을 선택
+- `filter`: 조건과 일치하는 행 선택
+- `distinct`: 고유한 행을 추출
+- `mutate`: 새로운 변수를 파생
+- `summarise`: 변수를 집계해서 값을 추출
+- `group_by`: 그룹화된 집계를 위해 사용
+- ... (그밖에 더)
+]
+]
+
+---
+
+## **dplyr** 함수의 규칙
+
+- 첫번째 인수는 **항상** 데이터 프레임
+- 후속 인수는 해당 데이터 프레임으로 수행할 작업을 설명
+- 항상 데이터프레임(tibble)을 반환
+
+---
+
+## Data: 호텔 예약
+
+- 두 호텔의 데이터: 하나의 리조트와 하나의 도시 호텔
+- 관측치: 각 행은 호텔 예약을 나타냅니다.
+- 원본 데이터 수집 목표: 호텔 예약 취소 가능성 분류 예측 모델 개발 ([Antonia et al., 2019](https://www.sciencedirect.com/science/article/pii/S2352340918315191#bib5))
+
+
+```r
+hotels &lt;- read_csv("data/hotels.csv")
+```
+
+.footnote[
+Source: [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-11/readme.md)
+]
+
+---
+
+## First look: 변수
+
+
+```r
+names(hotels)
+```
+
+```
+##  [1] "hotel"                         
+##  [2] "is_canceled"                   
+##  [3] "lead_time"                     
+##  [4] "arrival_date_year"             
+##  [5] "arrival_date_month"            
+##  [6] "arrival_date_week_number"      
+##  [7] "arrival_date_day_of_month"     
+##  [8] "stays_in_weekend_nights"       
+##  [9] "stays_in_week_nights"          
+## [10] "adults"                        
+## [11] "children"                      
+## [12] "babies"                        
+## [13] "meal"                          
+## [14] "country"                       
+## [15] "market_segment"                
+## [16] "distribution_channel"          
+## [17] "is_repeated_guest"             
+## [18] "previous_cancellations"        
+...
+```
+
+---
+
+## Second look: 개요
+
+
+```r
+glimpse(hotels)
+```
+
+```
+## Rows: 119,390
+## Columns: 32
+## $ hotel                          &lt;chr&gt; "Resort Hotel", "Resort …
+## $ is_canceled                    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ lead_time                      &lt;dbl&gt; 342, 737, 7, 13, 14, 14,…
+## $ arrival_date_year              &lt;dbl&gt; 2015, 2015, 2015, 2015, …
+## $ arrival_date_month             &lt;chr&gt; "July", "July", "July", …
+## $ arrival_date_week_number       &lt;dbl&gt; 27, 27, 27, 27, 27, 27, …
+## $ arrival_date_day_of_month      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, …
+## $ stays_in_weekend_nights        &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ stays_in_week_nights           &lt;dbl&gt; 0, 0, 1, 1, 2, 2, 2, 2, …
+## $ adults                         &lt;dbl&gt; 2, 2, 1, 1, 2, 2, 2, 2, …
+## $ children                       &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ babies                         &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ meal                           &lt;chr&gt; "BB", "BB", "BB", "BB", …
+## $ country                        &lt;chr&gt; "PRT", "PRT", "GBR", "GB…
+## $ market_segment                 &lt;chr&gt; "Direct", "Direct", "Dir…
+## $ distribution_channel           &lt;chr&gt; "Direct", "Direct", "Dir…
+...
+```
+
+---
+
+## 단일 열 선택
+
+`lead_time`만 보기(예약과 도착 날짜 사이의 일수):
+
+
+```r
+select(hotels, lead_time)
+```
+
+```
+## # A tibble: 119,390 × 1
+##   lead_time
+##       &lt;dbl&gt;
+## 1       342
+## 2       737
+## 3         7
+## 4        13
+## 5        14
+## 6        14
+## # … with 119,384 more rows
+```
+
+---
+
+## 단일 열 선택
+
+.pull-left[
+
+```r
+*select(
+  hotels, 
+  lead_time
+  )
+```
+]
+.pull-right[
+- 함수(동사)로 시작: `select()`
+]
+
+---
+
+## 단일 열 선택
+
+.pull-left[
+
+```r
+select( 
+* hotels,
+  lead_time
+  )
+```
+]
+.pull-right[
+- 함수(동사)로 시작: `select()`
+- First argument: data frame we're working with , `hotels`
+]
+
+---
+
+## 단일 열 선택
+
+.pull-left[
+
+```r
+select( 
+  hotels, 
+* lead_time
+  )
+```
+]
+.pull-right[
+- 함수(동사)로 시작: `select()`
+- 첫 번째 인수: 작업 중인 데이터 프레임, `hotels`
+- 두 번째 인수: 선택하려는 변수, `lead_time`
+]
+
+---
+
+## 단일 열 선택
+
+.pull-left[
+
+```r
+select( 
+  hotels, 
+  lead_time
+  )
+```
+
+```
+## # A tibble: 119,390 × 1
+##   lead_time
+##       &lt;dbl&gt;
+## 1       342
+## 2       737
+## 3         7
+## 4        13
+## 5        14
+## 6        14
+## # … with 119,384 more rows
+```
+]
+.pull-right[
+- 함수(동사)로 시작: `select()`
+- 첫 번째 인수: 작업 중인 데이터 프레임, `hotels`
+- 두 번째 인수: 선택하려는 변수, `lead_time`
+- 결과: 119390 행과 1개의 열이 있는 데이터 프레임
+]
+
+---
+
+.tip[
+dplyr 함수는 항상 데이터 프레임을 기대하고 항상 데이터 프레임을 생성합니다.
+]
+
+
+```r
+select(hotels, lead_time)
+```
+
+```
+## # A tibble: 119,390 × 1
+##   lead_time
+##       &lt;dbl&gt;
+## 1       342
+## 2       737
+## 3         7
+## 4        13
+## 5        14
+## 6        14
+## # … with 119,384 more rows
+```
+
+---
+
+## 여러 열 선택
+
+
+`hotel` 종류와 `lead_time`만 보기:
+
+--
+
+.pull-left[
+
+```r
+select(hotels, hotel, lead_time)
+```
+
+```
+## # A tibble: 119,390 × 2
+##   hotel        lead_time
+##   &lt;chr&gt;            &lt;dbl&gt;
+## 1 Resort Hotel       342
+## 2 Resort Hotel       737
+## 3 Resort Hotel         7
+## 4 Resort Hotel        13
+## 5 Resort Hotel        14
+## 6 Resort Hotel        14
+## # … with 119,384 more rows
+```
+]
+--
+.pull-right[
+.question[
+이러한 열을 선택한 다음 리드 타임(lead_time)의 내림차순으로 데이터를 정렬하려면 어떻게 해야 합니까?
+]
+]
+
+---
+
+## 데이터 조작, step-by-step
+
+.pull-left[
+변수 선택:
+
+```r
+hotels %&gt;%
+  select(hotel, lead_time)
+```
+
+```
+## # A tibble: 119,390 × 2
+##   hotel        lead_time
+##   &lt;chr&gt;            &lt;dbl&gt;
+## 1 Resort Hotel       342
+## 2 Resort Hotel       737
+## 3 Resort Hotel         7
+## 4 Resort Hotel        13
+## 5 Resort Hotel        14
+## 6 Resort Hotel        14
+## # … with 119,384 more rows
+```
+]
+
+--
+.pull-right[
+변수 선택 후 정렬:
+
+```r
+hotels %&gt;%
+  select(hotel, lead_time) %&gt;%
+  arrange(desc(lead_time))
+```
+
+```
+## # A tibble: 119,390 × 2
+##   hotel        lead_time
+##   &lt;chr&gt;            &lt;dbl&gt;
+## 1 Resort Hotel       737
+## 2 Resort Hotel       709
+## 3 City Hotel         629
+## 4 City Hotel         629
+## 5 City Hotel         629
+## 6 City Hotel         629
+## # … with 119,384 more rows
+```
+]
+
+---
+
+class: middle
+
+# 파이프(Pipes)
+
+---
+
+## 파이프(pipe)란 무엇인가요?
+
+프로그래밍에서 파이프는 한 프로세스에서 다른 프로세스로 정보를 전달하는 기술입니다.
+
+--
+
+.pull-left[
+- 데이터 프레임 `hotels`로 시작하여, 그 값을 `select()` 함수에 전달합니다.
+]
+.pull-right[
+.small[
+
+```r
+*hotels %&gt;%
+  select(hotel, lead_time) %&gt;%
+  arrange(desc(lead_time))
+```
+
+```
+## # A tibble: 119,390 × 2
+##   hotel        lead_time
+##   &lt;chr&gt;            &lt;dbl&gt;
+## 1 Resort Hotel       737
+## 2 Resort Hotel       709
+## 3 City Hotel         629
+## 4 City Hotel         629
+## 5 City Hotel         629
+## 6 City Hotel         629
+## # … with 119,384 more rows
+```
+]
+]
+
+---
+
+## 파이프(pipe)란 무엇인가요?
+
+프로그래밍에서 파이프는 한 프로세스에서 다른 프로세스로 정보를 전달하는 기술입니다.
+
+.pull-left[
+- 데이터 프레임 `hotels`로 시작하여, 그 값을 `select()` 함수에 전달합니다.
+- 그런 다음, `hotel`과 `lead_time` 변수를 선택합니다.
+]
+.pull-right[
+.small[
+
+```r
+hotels %&gt;%
+* select(hotel, lead_time) %&gt;%
+  arrange(desc(lead_time))
+```
+
+```
+## # A tibble: 119,390 × 2
+##   hotel        lead_time
+##   &lt;chr&gt;            &lt;dbl&gt;
+## 1 Resort Hotel       737
+## 2 Resort Hotel       709
+## 3 City Hotel         629
+## 4 City Hotel         629
+## 5 City Hotel         629
+## 6 City Hotel         629
+## # … with 119,384 more rows
+```
+]
+]
+
+---
+
+## What is a pipe?
+
+프로그래밍에서 파이프는 한 프로세스에서 다른 프로세스로 정보를 전달하는 기술입니다.
+
+.pull-left[
+- 데이터 프레임 `hotels`로 시작하여, 그 값을 `select()` 함수에 전달합니다.
+- 그런 다음, `hotel`과 `lead_time` 변수를 선택합니다.
+- 그런 다음 `lead_time`을 기준으로 데이터 프레임을 내림차순으로 정렬합니다.
+]
+.pull-right[
+.small[
+
+```r
+hotels %&gt;%
+  select(hotel, lead_time) %&gt;% 
+* arrange(desc(lead_time))
+```
+
+```
+## # A tibble: 119,390 × 2
+##   hotel        lead_time
+##   &lt;chr&gt;            &lt;dbl&gt;
+## 1 Resort Hotel       737
+## 2 Resort Hotel       709
+## 3 City Hotel         629
+## 4 City Hotel         629
+## 5 City Hotel         629
+## 6 City Hotel         629
+## # … with 119,384 more rows
+```
+]
+]
+
+---
+
+## Aside
+
+파이프 연산자는 **magrittr** 패키지에서 구현되지만 **tidyverse**가 우리를 위해 이 패키지를 로드하기 때문에 명시적으로 이 패키지를 로드할 필요는 없습니다.
+
+--
+
+.question[
+패키지 이름이 magrittr인 이유에 대한 추측이 있습니까?
+]
+
+--
+
+.pull-left[
+&lt;img src="img/magritte.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+]
+.pull-right[
+&lt;img src="img/magrittr.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## 파이프는 어떻게 작동합니까?
+
+- 차키 찾기, 자동차 잠금 해제, 자동차 시동, 출퇴근길 운전, 주차와 같은 일련의 작업에 대해 생각할 수 있습니다.
+
+--
+- R 수도 코드에서 중첩 함수 집합으로 표현하면 다음과 같습니다.:
+
+```r
+park(drive(start_car(find("keys")), to = "work"))
+```
+
+--
+- 파이프를 사용하여 작성하면 더 자연스럽고 읽기 쉽습니다.
+structure:
+
+```r
+find("keys") %&gt;%
+  start_car() %&gt;%
+  drive(to = "work") %&gt;%
+  park()
+```
+
+---
+
+## 파이핑 및 레이어링에 대한 참고 사항
+
+- **dplyr**의 파이프라인에서 주로 사용되는 `%&gt;%`, *우리는 이전 코드 라인의 출력을 다음 코드 라인의 첫 번째 입력으로 파이프합니다*
+
+--
+- **ggplot2** 플롯의 "레이어링"에 사용되는 `+`, *`+`로 구분된 레이어로 플롯을 생성합니다.*
+
+---
+
+## dplyr
+
+.midi[
+❌
+
+
+```r
+hotels +
+  select(hotel, lead_time)
+```
+
+```
+## Error in select(hotel, lead_time): object 'hotel' not found
+```
+
+✅
+
+
+```r
+hotels %&gt;%
+  select(hotel, lead_time)
+```
+
+
+```
+## # A tibble: 119,390 × 2
+##   hotel        lead_time
+##   &lt;chr&gt;            &lt;dbl&gt;
+## 1 Resort Hotel       342
+## 2 Resort Hotel       737
+## 3 Resort Hotel         7
+...
+```
+]
+
+---
+
+## ggplot2
+
+.midi[
+❌
+
+
+```r
+ggplot(hotels, aes(x = hotel, fill = deposit_type)) %&gt;%
+  geom_bar()
+```
+
+```
+## Error in `validate_mapping()`:
+## ! `mapping` must be created by `aes()`
+## Did you use %&gt;% instead of +?
+```
+
+✅
+
+
+```r
+ggplot(hotels, aes(x = hotel, fill = deposit_type)) +
+  geom_bar()
+```
+
+&lt;img src="slide_65210022_files/figure-html/unnamed-chunk-30-1.png" width="25%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## 코딩 스타일
+
+많은 스타일링 원칙이 `%&gt;%` 및 `+`에서 일관되게 사용됩니다:
+
+- 항상 앞에 공백
+- 항상 다음에 줄 바꿈(2줄 이상의 파이프라인의 경우)
+
+❌
+
+
+```r
+ggplot(hotels,aes(x=hotel,y=deposit_type))+geom_bar()
+```
+
+✅
+
+
+```r
+ggplot(hotels, aes(x = hotel, y = deposit_type)) + 
+  geom_bar()
+```
+
+---
+
+class: middle
+
+# Q &amp; A
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="libs/remark/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightLines": true,
+"highlightStyle": "solarized-light",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
