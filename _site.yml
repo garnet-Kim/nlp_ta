@@ -1,19 +1,19 @@
 name: "Dongsu 웹 사이트"
 title: "Dongsu 웹 사이트"
 description: |
-  My Website
+  내가 생각하는 텍스트 분석과 기대하는 텍스트 분석
 output_dir: "docs"
 navbar:
   right:
     - text: "Home"
       href: index.html
-    - text: "샘플 웹 사이트 개발하기"
+    - text: "웹 사이트 개발하기"
       href: create_website.html
-    - text: "텍스트 기반 이진분류 모형"
+    - text: "나의 텍스트 분석 경험"
       menu:
-        - text: "LASSO 모형기반 민원 예측"
+        - text: "대통령 연설문 예측"
           href: classifier_lasso.html
-        - text: "BERT 기반 민원 예측"
+        - text: "캡스톤 프로젝트"
           href: classifier_bert.html
 output:
   distill::distill_article:

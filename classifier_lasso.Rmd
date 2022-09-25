@@ -1,15 +1,12 @@
 ---
-title: "LASSO 모형기반 민원 예측"
+title: "대통령 연설문 예측"
 description: |
-  텍스트 분석의 실마리를 찾기 위해서 상담 내역 텍스트 데이터를 탐색합니다. 여기에는 데이터의 품질을 보정하기 위한 관점도 포함되어 있습니다.
+  TBD
 author:
-  - name: 유충현 
-    url: https://choonghyunryu.github.io/
-    affiliation: 한국 R 사용자회
-    affiliation_url: https://r2bit.com/
-  - name: 홍길동 
-    affiliation: 한국 R 사용자회
-    affiliation_url: https://r2bit.com/
+  - name: 김동수
+    url: https://garnet-Kim.github.io/
+    affiliation: 데이터기록전공 석사3학기
+    affiliation_url:
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
