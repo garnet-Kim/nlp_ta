@@ -19,6 +19,11 @@
   --custom-lightblue: rgb(204, 227, 242);
   --custom-orange: rgb(255, 127, 42);
   --custom-lightorange: rgb(255, 204, 170);
+  --custom-indigo: rgb(75, 0, 130);
+  --custom-mediumslateblue: rgb(124, 104, 238);
+  --custom-darkviolet: rgb(148, 0, 211);
+  --custom-rebeccapurple: rgb(102, 51, 153);
+  --custom-slateblue: rgb(106, 90, 205);
 }
 
 html {
@@ -71,14 +76,14 @@ d-appendix {
   --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        15px;
   --hover-color:      white;
-  --bkgd-color:       var(--custom-orange);
+  --bkgd-color:       var(--custom-slateblue);
 }
 
 .distill-site-footer {
   --text-color:       rgba(255, 255, 255, 0.8);
   --text-size:        15px;
   --hover-color:      white;
-  --bkgd-color:       var(--custom-orange);
+  --bkgd-color:       var(--custom-slateblue);
 }
 
 /*-- Additional custom styles --*/
