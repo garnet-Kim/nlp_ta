@@ -5,8 +5,8 @@ description: |
 author:
   - name: 김동수
     url: https://garnet-Kim.github.io/
-    affiliation: 데이터기록전공 석사3학기
-    affiliation_url: 
+    affiliation: 명지대학교 기록정보과학전문대학원 데이터기록전공
+    affiliation_url: https://www.mju.ac.kr/record/index.do
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:

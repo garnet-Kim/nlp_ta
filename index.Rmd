@@ -1,7 +1,7 @@
 ---
 title: "텍스트 데이터 분석"
 description:
-  텍스트 분석은 자연어로 구성된 대량의 비정형 텍스트 또는 사전 정의된 형식이 없는 텍스트를 처리하여 패턴이나 관계를 알아내어 의미있는 정보를 찾는 것을 말한다.
+  텍스트 분석은 자연어로 구성된 대량의 비정형 텍스트 또는 사전 정의된 형식이 없는 텍스트를 처리하여 패턴이나 관계를 알아내어 의미있는 정보를 찾는 것을 말한다. 방대한 양의 비정형 텍스트 문서로부터 주요 토픽
 site: distill::distill_website
 output:
   distill::distill_article:
@@ -10,8 +10,8 @@ output:
 author:
   - name: 김동수
     url: https://garnet-Kim.github.io/
-    affiliation: 데이터기록전공 석사3학기
-    affiliation_url:
+    affiliation: 명지대학교 기록정보과학전문대학원 데이터기록전공
+    affiliation_url: https://www.mju.ac.kr/record/index.do
 date: "`r Sys.Date()`" 
 ---
 
