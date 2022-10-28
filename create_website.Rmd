@@ -4,14 +4,14 @@ description: |
   웹 사이트 개발하는 방법을 간단하게 소개합니다.
 author:
   - name: 김동수
-    url: https://garnet-Kim.github.io/
+    url: https://github.com/garnet-Kim/nlp_ta.git
     affiliation: 명지대학교 기록정보과학전문대학원 데이터기록전공
     affiliation_url: https://www.mju.ac.kr/record/index.do
 date: "`r Sys.Date()`"
 output: 
   distill::distill_article:
     toc: true
-    toc_depth: 3  
+    toc_depth: 3
 ---
 
 ```{r setup, include=FALSE}
