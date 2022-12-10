@@ -1,7 +1,8 @@
 ---
 title: "대통령 연설문 예측"
 description: |
-  TBD
+  2022학년도 2학기 텍스트 정보처리와 NLP 수업내용입니다.
+  텍스트 분류모형을 개발하고, DTM의 종류별 성능 차이를 비교합니다.
 author:
   - name: 김동수
     url: https://github.com/garnet-Kim
@@ -29,4 +30,270 @@ library(dplyr, warn.conflicts = FALSE)
 library(ggplot2, warn.conflicts = FALSE)
 
 xaringanExtra :: use_panelset()
+```
+
+준비하기
+---
+### 패키지 로드하기
+
+```{r package}
+# ■ text2vec
+# -텍스트 분류모델 개발을 위해서 텍스트를 벡터화하는  패키지를 설치하고 불러오기
+if (!require("text2vec")) {
+  install.packages("text2vec")
+  library("text2vec")
+}
+
+# ■ glmnet
+# - 분류모델 개발을 위한 glmnet 패키지를 설치하고 불러오기
+
+if (!require("glmnet")) {
+  install.packages("glmnet")
+  library("glmnet")
+}
+library(tidyverse)
+library(tidymodels)
+library(caret)
+library(bitTA)
+```
+
+분석 방법 정의
+---
+### 데이터셋 샘플링
+앞서 배운 tidymodels 패키지를 이용해서 데이터셋을 샘플링합니다.
+
+initial_split(), initial_split(), initial_split() 함수로 원 데이터를 학습 : 평가 = 87.5% : 12.5%로 분리를 수행합니다.
+
+```{r sampling}
+set.seed(123)
+president_split <- rsample::initial_split(president_speech, prop = 7/8, strata = president)
+
+president_smpl <- rsample::testing(president_split)
+```
+
+### 데이터셋 분리
+비로소 모델 개발을 위한 데이터셋을 분리합니다.
+
+initial_split(), initial_split(), initial_split() 함수로 원 데이터를 학습 : 평가 = 70% : 30%로 분리를 수행합니다.
+
+```{r split}
+set.seed(123)
+president_split <- initial_split(president_smpl, prop = 0.7, strata = president)
+
+train <- rsample::training(president_split)
+test <- rsample::testing(president_split)
+```
+
+### tokenize 반복기 정의
+tokenizer로 text2vec::morpho_mecab()를 정의했기 때문에 띄어쓰기 단위의 term이 생성될 것입니다.
+
+```{r token}
+# 띄어쓰기 단위로 토큰을 생성
+token_fun <- text2vec::word_tokenizer
+
+it_train <- itoken(train$doc, 
+                   tokenizer = token_fun, 
+                   ids = train$id, 
+                   progressbar = FALSE)
+
+it_test <- itoken(test$doc,
+                  tokenizer = token_fun, 
+                  ids = test$id, 
+                  progressbar = FALSE)
+```
+
+TF기반의 DTM 생성
+---
+### Vocabulary 생성
+vocabulary는 documents로부터 생성된 terms의 집합
+여기서는 tokenizer를 일반명사로 정의했기 때문에 일반명사 집합으로 vocabulary가 생성
+
+몇몇 데이터를 조회해보면 term별로 frequency와 document frequency가 도출되었음을 알 수 있음
+
+또한 word2vec 패키지의 함수들은 parallel processing을 지원하므로, parallel 처리를 위한 multicores 사용을 지원하는 doMC, doParallel 등의 패키지 사용이 필요.
+
+```{r tf_voca, tidy=TRUE}
+vocab <- create_vocabulary(it_train)
+
+tail(vocab, n = 10)
+```
+
+### Document Term Matrix 생성하기
+documents taxonomy 분류 모델을 수행하는 데이터셋은 DTM(Document Term Matrix) 구조여야 함.
+그래서 vocabulary를 DTM으로 변환하는 작업을 수행.
+text2vec::create_dtm() 함수를 사용.
+
+```{r tf_dtm_train, tidy=TRUE}
+vectorizer <-  vocab_vectorizer(vocab)
+
+dtm_train <- text2vec::create_dtm(it_train, vectorizer)
+dim(dtm_train)
+```
+
+```{r tf_dtm_test, tidy=TRUE}
+dtm_test <- text2vec::create_dtm(it_test, vectorizer)
+dim(dtm_test)
+```
+
+N-Grams 기반의 DTM 생성
+---
+
+### Vocabulary 생성
+
+```{r n_voca, tidy=TRUE}
+vocab_bigram <- create_vocabulary(it_train, ngram = c(1L, 2L))
+dim(vocab_bigram)
+```
+
+```{r n_voca_head, tidy=TRUE}
+head(vocab_bigram, n = 10)
+```
+
+### Prune Vocabulary
+>Documents의 개수가 증가하거나 Documents의 길이가 증가하면, Vocabulary의 규모도 증가 함. 이것은 모델을 생성하는데 많은 컴퓨팅 리소스를 소모해서 속도가 느려짐. 그래서 모델에 영향을 덜 줄 수 있는 terms를 제거하는 작업이 필요함.
+
+```{r n_pvoca, tidy=TRUE}
+vocab_bigram <- vocab_bigram %>% 
+  prune_vocabulary(term_count_min = 10,
+                   doc_proportion_max = 0.5)
+dim(vocab_bigram)
+```
+
+### Documents Term Matrix 생성
+
+```{r n_dtm_train, tidy=TRUE}
+vectorizer_bigram <- vocab_vectorizer(vocab_bigram)
+
+dtm_train_bigram <- create_dtm(it_train, vectorizer_bigram)
+dim(dtm_train_bigram)
+```
+
+```{r n_dtm_test, tidy=TRUE}
+dtm_test_bigram  <- create_dtm(it_test, vectorizer_bigram)
+dim(dtm_test_bigram)
+```
+
+TF-IDF 기반의 DTM 생성
+---
+TF-IDF는 단일문서, 혹은 소수의 문서에서 의미가 있는 terms의 가중치를 높이고 대부분의 문서에서 발현하는 terms의 가중치를 줄이는 용도로 만들어진 측도입니다. 그러므로 DTM에 TF-IDF 변환을 수행하면 모델의 성능이 개선됩니다
+
+Text Anaytics에서는 documents의 길이의 차이가 있으면, 상대적으로 짧거나 긴 documents에서 발현하는 terms들로 인해서 frequency scale에 왜곡이 있을 수 있습니다. 이 경우에는 표준화를 수행해야 합니다. 그런데 TF-IDF 변환은 자동으로 표준화가 되기 때문에 표준화의 잇점이 있습니다. 만약 표준화를 수행하려면, normalize() 함수를 사용하면 됩니다.
+
+### DTM의 TF-IDF 변환
+TfIdf class와 fit_transform() 함수를 이용해서 DTM에 TF-IDF 변환을 수행합니다.
+
+```{r tfidf, tidy=TRUE}
+tfidf <- TfIdf$new()
+
+dtm_train_tfidf <- fit_transform(dtm_train, tfidf)
+dtm_test_tfidf <- fit_transform(dtm_test, tfidf) 
+```
+
+DTM의 크기 비교
+---
+
+```{r dtm_dim, tidy=TRUE}
+dim(dtm_train)
+dim(dtm_train_bigram)
+dim(dtm_train_tfidf)
+```
+
+LASSO 회귀모형 모델 적합
+---
+### Frequency 기반 모델링
+#### 모델 생성
+
+```{r tf_classifier, tidy=TRUE}
+NFOLDS <- 10
+
+classifier <- cv.glmnet(x = dtm_train, y = train$president, 
+                        family = 'multinomial', 
+                        alpha = 1,
+                        type.measure = "deviance",
+                        nfolds = NFOLDS,
+                        thresh = 0.001,
+                        maxit = 1000,
+                        parallel = TRUE)
+```
+
+#### 모델의 평가
+test 데이터로 평가한 결과 Accuracy가 0.869로 비교적 높게 나타났습니다
+
+```{r tf_cmat, tidy=TRUE}
+pred_voca <- predict(classifier, dtm_test, type = 'response')[, , 1]
+president_voca <- apply(pred_voca, 1, 
+                        function(x) colnames(pred_voca)[which(max(x) == x)])
+
+cmat_voca <- confusionMatrix(factor(president_voca), factor(test$president))
+cmat_voca
+```
+
+### N-Grams 기반 모델링
+#### 모델 생성
+
+```{r bigram_classifier, tidy=TRUE}
+classifier <- cv.glmnet(x = dtm_train_bigram, y = train$president, 
+                        family = 'multinomial', 
+                        type.measure = "deviance",
+                        alpha = 1,                        
+                        nfolds = NFOLDS,
+                        parallel = TRUE)
+```
+
+#### 모델의 평가
+vocabulary를 가지지기했음에도 불구하고, 전체 vocabulary를 사용한 모델보다 성능이 좋아졌습니다.
+
+```{r bigram_cmat, tidy=TRUE}
+pred_bigram <- predict(classifier, dtm_test_bigram, type = 'response')[, , 1]
+
+president_bigram <- apply(pred_bigram, 1, 
+                          function(x) colnames(pred_bigram)[which(max(x) == x)])
+
+cmat_bigram <- confusionMatrix(factor(president_bigram), factor(test$president))
+cmat_bigram
+```
+
+### TF-IDF 기반의 모델
+#### 모델 생성
+
+```{r tfidf_classifier, tidy=TRUE}
+classifier <- cv.glmnet(x = dtm_train_tfidf, y = train$president, 
+                        family = 'multinomial', 
+                        nfolds = NFOLDS,
+                        thresh = 1e-3,
+                        maxit = 1e3,
+                        parallel = TRUE)
+```
+
+#### 모델의 평가
+
+```{r tfidf_cmat, tidy=TRUE}
+pred_tfidf <- predict(classifier, dtm_test_tfidf, type = 'response')[, , 1]
+
+president_tfidf <- apply(pred_tfidf, 1, 
+                         function(x) colnames(pred_tfidf)
+                         [which(max(x) == x)])
+
+cmat_tfidf <- confusionMatrix(factor(president_tfidf), factor(test$president))
+cmat_tfidf
+```
+
+모델 성능의 비교
+---
+모델의 성능은 TF-IDF > Bigram(Pruned) > Frequency의 순서로 나타납니다.
+
+그러므로 성능을 높이기 위해서는 TF-IDF 방법을 사용하는 것이 좋으며, 대용량의 데이터 분석에서는 적은 성능 감소와 수행 속도의 개선을 가져오는 Feature Hashing 기법을 사용하면 될 것입니다. 이 경우에는 Purne Vocabulary 전처리도 필요할 것입니다.
+
+다만, 몇몇 결과는 그 성능 차이가 작기 때문에 모델의 파라미터에 따라 순서가 바뀔수도 있습니다
+
+```{r model_accu, tidy=TRUE}
+accuracy <- rbind(cmat_voca$overall, 
+                  cmat_bigram$overall, 
+                  cmat_tfidf$overall) %>%
+  round(3)
+
+data.frame(Method = c("Frequency", "Bigram", "TF-IDF"),
+           accuracy) %>%
+  arrange(desc(Accuracy)) %>%
+  knitr::kable()
 ```

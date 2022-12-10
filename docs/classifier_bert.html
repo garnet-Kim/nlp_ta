@@ -90,31 +90,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Dongsu 웹 사이트: 캡스톤 프로젝트</title>
 
-  <meta property="description" itemprop="description" content="TBD"/>
+  <meta property="description" itemprop="description" content="한 학기 과정의 핵심 내용을 실습을 통해서 다시한번 다지기"/>
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-10-29"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-10-29"/>
+  <meta property="article:published" itemprop="datePublished" content="2022-12-10"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-12-10"/>
   <meta name="article:author" content="김동수"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Dongsu 웹 사이트: 캡스톤 프로젝트"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="TBD"/>
+  <meta property="og:description" content="한 학기 과정의 핵심 내용을 실습을 통해서 다시한번 다지기"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Dongsu 웹 사이트"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Dongsu 웹 사이트: 캡스톤 프로젝트"/>
-  <meta property="twitter:description" content="TBD"/>
+  <meta property="twitter:description" content="한 학기 과정의 핵심 내용을 실습을 통해서 다시한번 다지기"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["캡스톤 프로젝트"]},{"type":"character","attributes":{},"value":["TBD"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["김동수"]},{"type":"character","attributes":{},"value":["https://github.com/garnet-Kim"]},{"type":"character","attributes":{},"value":["명지대학교 기록정보과학전문대학원 데이터기록전공"]},{"type":"character","attributes":{},"value":["https://www.mju.ac.kr/record/index.do"]}]}]},{"type":"character","attributes":{},"value":["2022-10-29"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["캡스톤 프로젝트"]},{"type":"character","attributes":{},"value":["한 학기 과정의 핵심 내용을 실습을 통해서 다시한번 다지기\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["김동수"]},{"type":"character","attributes":{},"value":["https://github.com/garnet-Kim"]},{"type":"character","attributes":{},"value":["명지대학교 기록정보과학전문대학원 데이터기록전공"]},{"type":"character","attributes":{},"value":["https://www.mju.ac.kr/record/index.do"]}]}]},{"type":"character","attributes":{},"value":["2022-12-10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2161,6 +2161,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   /* Optional: embed custom fonts here with `@import`          */
   /* This must remain at the top of this file.                 */
 
+  @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+  @import url(https://cdn.jsdelivr.net/gh/joungkyun/font-d2coding/d2coding.css);
+
   :root {
     --custom-grey60: rgb(102, 102, 102);
     --custom-grey20: rgb(204, 204, 204);
@@ -2191,7 +2194,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     --fig-cap-color:   rgba(0, 0, 0, 0.6);
     /*-- Specify custom fonts ~~~ must be imported above   --*/
     --heading-font:    sans-serif;
-    --mono-font:       monospace;
+    --mono-font:       D2Coding;
     --body-font:       sans-serif;
     --navbar-font:     sans-serif;  /* websites + blogs only */
   }
@@ -2516,6 +2519,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
   <link href="site_libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
   <script src="site_libs/panelset-0.2.6/panelset.js"></script>
+  <script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+  <link href="site_libs/wordcloud2-0.0.1/wordcloud.css" rel="stylesheet" />
+  <script src="site_libs/wordcloud2-0.0.1/wordcloud2-all.js"></script>
+  <script src="site_libs/wordcloud2-0.0.1/hover.js"></script>
+  <script src="site_libs/wordcloud2-binding-0.2.2/wordcloud2.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2535,7 +2543,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"캡스톤 프로젝트","description":"TBD","authors":[{"author":"김동수","authorURL":"https://github.com/garnet-Kim","affiliation":"명지대학교 기록정보과학전문대학원 데이터기록전공","affiliationURL":"https://www.mju.ac.kr/record/index.do","orcidID":""}],"publishedDate":"2022-10-29T00:00:00.000+09:00","citationText":"김동수, 2022"}
+{"title":"캡스톤 프로젝트","description":"한 학기 과정의 핵심 내용을 실습을 통해서 다시한번 다지기","authors":[{"author":"김동수","authorURL":"https://github.com/garnet-Kim","affiliation":"명지대학교 기록정보과학전문대학원 데이터기록전공","affiliationURL":"https://www.mju.ac.kr/record/index.do","orcidID":""}],"publishedDate":"2022-12-10T00:00:00.000+09:00","citationText":"김동수, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2571,7 +2579,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1>캡스톤 프로젝트</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>TBD</p>
+<p><p>한 학기 과정의 핵심 내용을 실습을 통해서 다시한번 다지기</p></p>
 </div>
 
 <div class="d-byline">
@@ -2581,11 +2589,1719 @@ class="uri">https://github.com/garnet-Kim</a> (명지대학교
 href="https://www.mju.ac.kr/record/index.do"
 class="uri">https://www.mju.ac.kr/record/index.do</a>
   
-<br/>2022-10-29
+<br/>2022-12-10
 </div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#텍스트-데이터-수집">텍스트 데이터 수집</a>
+<ul>
+<li><a href="#데이터-수집">데이터 수집</a></li>
+<li><a href="#간단한-데이터-요약">간단한 데이터 요약</a></li>
+</ul></li>
+<li><a href="#정규표현식의-이해">정규표현식의 이해</a>
+<ul>
+<li><a href="#패턴-검색">패턴 검색</a></li>
+</ul></li>
+<li><a href="#document-term-matrix의-이해">Document Term Matrix의
+이해</a>
+<ul>
+<li><a href="#dtm-생성하기">DTM 생성하기</a></li>
+</ul></li>
+<li><a href="#correlation-analysis">Correlation Analysis</a></li>
+<li><a href="#연관분석">연관분석</a>
+<ul>
+<li><a href="#binary-term-frequency-기반-dtm-생성">Binary Term Frequency
+기반 DTM 생성</a></li>
+<li><a href="#불용어-제거">불용어 제거</a></li>
+<li><a href="#transactions-생성하기">Transactions 생성하기</a></li>
+<li><a href="#연관규칙-생성하기">연관규칙 생성하기</a></li>
+<li><a href="#연관규칙-시각화하기">연관규칙 시각화하기</a></li>
+</ul></li>
+<li><a href="#단어의-계층적-군집분석">단어의 계층적 군집분석</a>
+<ul>
+<li><a href="#희박-단어의-제거">희박 단어의 제거</a></li>
+<li><a href="#비상사도-행렬-생성">비상사도 행렬 생성</a></li>
+<li><a href="#clustering">Clustering</a></li>
+<li><a href="#clustering-1">Clustering</a></li>
+<li><a href="#군집의-해석">군집의 해석</a></li>
+</ul></li>
+<li><a href="#기사의-계층적-군집분석">기사의 계층적 군집분석</a>
+<ul>
+<li><a href="#희박-단어의-제거-1">희박 단어의 제거</a></li>
+<li><a href="#비상사도-행렬-생성-1">비상사도 행렬 생성</a></li>
+<li><a href="#clustering-2">Clustering</a></li>
+<li><a href="#군집-개수-선정-및-시각화">군집 개수 선정 및
+시각화</a></li>
+<li><a href="#군집의-해석-1">군집의 해석</a></li>
+<li><a href="#기사-군집-1">기사 군집 1</a></li>
+</ul></li>
+<li><a href="#topic-분석">Topic 분석</a>
+<ul>
+<li><a href="#otf-계산">OTF 계산</a></li>
+<li><a href="#불용어-제거-1">불용어 제거</a></li>
+<li><a href="#topic-modeling">Topic Modeling</a></li>
+<li><a href="#topic-개수-구하기">Topic 개수 구하기</a></li>
+<li><a href="#top-beta-단어의-시각화">Top beta 단어의 시각화</a></li>
+<li><a href="#문서에서의-토픽의-비중">문서에서의 토픽의 비중</a></li>
+<li><a href="#토픽이-포함된-문서-조회">토픽이 포함된 문서 조회</a></li>
+<li><a href="#문서의-토픽-분해">문서의 토픽 분해</a></li>
+<li><a href="#토픽의-단어-분해">토픽의 단어 분해</a></li>
+</ul></li>
+<li><a href="#이진분류-모형">이진분류 모형</a>
+<ul>
+<li><a href="#패키지-로드하기">패키지 로드하기</a></li>
+<li><a href="#파생변수-만들기">파생변수 만들기</a></li>
+<li><a href="#불균형-데이터의-언더-샘플링">불균형 데이터의 언더
+샘플링</a></li>
+<li><a href="#데이터셋-분리">데이터셋 분리</a></li>
+<li><a href="#tokenize-반복기-정의">tokenize 반복기 정의</a></li>
+<li><a href="#frequency-기반의-dtm-생성">Frequency 기반의 DTM
+생성</a></li>
+<li><a href="#n-grams-기반의-dtm-생성">N-Grams 기반의 DTM 생성</a></li>
+<li><a href="#tf-idf-기반의-dtm-생성">TF-IDF 기반의 DTM 생성</a></li>
+<li><a href="#dtm의-크기-비교">DTM의 크기 비교</a></li>
+<li><a href="#frequency-기반-모델링">Frequency 기반 모델링</a></li>
+<li><a href="#모델의-이해">모델의 이해</a></li>
+<li><a href="#모델의-평가">모델의 평가</a></li>
+</ul></li>
+</ul>
+</nav>
+</div>
+<h2 id="텍스트-데이터-수집">텍스트 데이터 수집</h2>
+<h3 id="데이터-수집">데이터 수집</h3>
+<h4 id="인증키와-키워드-입력">인증키와 키워드 입력</h4>
+<ul>
+<li>client_id, client_secret는 사용자의 API 인증키를 삽입</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>koscrap</span><span class='op'>)</span>
+
+<span class='co'># Naver 뉴스 API 인증키</span>
+<span class='va'>client_id</span> <span class='op'>&lt;-</span> <span class='st'>"D_7oXG2_osfloS1rLW2X"</span>
+<span class='va'>client_secret</span> <span class='op'>&lt;-</span> <span class='st'>"7Q8pd9QSnM"</span>
+
+<span class='co'># 검색 키워드</span>
+<span class='va'>keyword</span> <span class='op'>&lt;-</span> <span class='st'>"월드컵"</span>
+</code></pre>
+</div>
+</div>
+<h4 id="날짜-정렬-기준-수집">날짜 정렬 기준 수집</h4>
+<ul>
+<li>날짜 기준 정렬로 1,000건의 뉴스를 수집</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>n</span> <span class='op'>&lt;-</span> <span class='fl'>1000</span>
+<span class='co'># 날짜 정렬 수집</span>
+<span class='va'>news_worldcup_date</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/koscrap/man/search_naver.html'>search_naver</a></span><span class='op'>(</span>
+  <span class='va'>keyword</span>, client_id <span class='op'>=</span> <span class='va'>client_id</span>, client_secret <span class='op'>=</span> <span class='va'>client_secret</span>,
+  do_done <span class='op'>=</span> <span class='cn'>TRUE</span>, max_record <span class='op'>=</span> <span class='va'>n</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>* 검색된 총 기사 건수는 2741070건입니다.
+- (100/1000)건 호출을 진행합니다.
+- (200/1000)건 호출을 진행합니다.
+- (300/1000)건 호출을 진행합니다.
+- (400/1000)건 호출을 진행합니다.
+- (500/1000)건 호출을 진행합니다.
+- (600/1000)건 호출을 진행합니다.
+- (700/1000)건 호출을 진행합니다.
+- (800/1000)건 호출을 진행합니다.
+- (900/1000)건 호출을 진행합니다.
+- (1000/1000)건 호출을 진행합니다.</code></pre>
+</div>
+<h4 id="유사도-정렬-기준-수집">유사도 정렬 기준 수집</h4>
+<ul>
+<li>유사도 기준 정렬로 1,000건의 뉴스를 수집</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># 유사도 정렬 수집</span>
+<span class='va'>news_worldcup_sim</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/koscrap/man/search_naver.html'>search_naver</a></span><span class='op'>(</span>
+  <span class='va'>keyword</span>, client_id <span class='op'>=</span> <span class='va'>client_id</span>, client_secret <span class='op'>=</span> <span class='va'>client_secret</span>, sort <span class='op'>=</span> <span class='st'>"sim"</span>,
+  do_done <span class='op'>=</span> <span class='cn'>TRUE</span>, max_record <span class='op'>=</span> <span class='va'>n</span>
+<span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>* 검색된 총 기사 건수는 2741070건입니다.
+- (100/1000)건 호출을 진행합니다.
+- (200/1000)건 호출을 진행합니다.
+- (300/1000)건 호출을 진행합니다.
+- (400/1000)건 호출을 진행합니다.
+- (500/1000)건 호출을 진행합니다.
+- (600/1000)건 호출을 진행합니다.
+- (700/1000)건 호출을 진행합니다.
+- (800/1000)건 호출을 진행합니다.
+- (900/1000)건 호출을 진행합니다.
+- (1000/1000)건 호출을 진행합니다.</code></pre>
+</div>
+<ul>
+<li>데이터를 수집하는 시점에 따라 결과가 다르겠지만, 각각 1000건의
+데이터가 수집되었습니다. 변수의 개수는 7개입니다.</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>news_worldcup_date</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1000    7</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>news_worldcup_sim</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1000    7</code></pre>
+</div>
+<ul>
+<li>앞, 뒤의 몇 건을 조회</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>news_worldcup_date</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                                                                                                    title
+1                                   메시, WC 10호골→바티스투타와 나란히...4강서 &amp;apos;단독 1위&amp;apos; 겨냥
+2                        &amp;apos;충격패&amp;apos; 브라질의 새 감독은?...팬들은 &amp;apos;세계적인 명장&amp;apos; 원한다
+3                          &amp;apos;8강 대진표&amp;apos; 잉글랜드 대 프랑스 경기 중계·피파랭킹·예상선발라인업은?
+4 &amp;apos;아형&amp;apos; 윤시윤 &amp;quot;전 세계 추기경들, &amp;apos;탄생&amp;apos; 시사회서 &lt;b&gt;월드컵&lt;/b&gt; 얘기 한창&amp;quot;
+5         &amp;apos;전지적 참견 시점&amp;apos;·&amp;apos;그것이 알고싶다&amp;apos; 2주 연속 결방, &lt;b&gt;월드컵&lt;/b&gt; 중계 때문
+6                                            “치킨 눅눅해 지겼네” 5천원 배달비도 비싼데, 배달도 늦어진다?
+                                                       originallink
+1 http://www.interfootball.co.kr/news/articleView.html?idxno=591913
+2    http://www.fourfourtwo.co.kr/news/articleView.html?idxno=25155
+3     https://www.gukjenews.com/news/articleView.html?idxno=2611700
+4   https://www.starnewskorea.com/stview.php?no=2022121020541081352
+5                          http://www.mediapen.com/news/view/777183
+6             http://news.heraldcorp.com/view.php?ud=20221209000677
+                                                           link
+1 https://sports.news.naver.com/news.nhn?oid=413&amp;aid=0000151550
+2 https://sports.news.naver.com/news.nhn?oid=411&amp;aid=0000020277
+3 https://www.gukjenews.com/news/articleView.html?idxno=2611700
+4 https://n.news.naver.com/mnews/article/108/0003111938?sid=106
+5                      http://www.mediapen.com/news/view/777183
+6 https://n.news.naver.com/mnews/article/016/0002076587?sid=105
+                                                                                                                                                                                                                                             description
+1                                   카타르 &lt;b&gt;월드컵&lt;/b&gt; 8강전에서 네덜란드와 2-2로 비긴 뒤 승부차기에서 4-3으로 승리하며 4강 진출에 성공했다. 오는 14일 오전 4시 브라질을 격추한 크로아티아와 대결을 치른다. 역대 &lt;b&gt;월드컵&lt;/b&gt;에서 토너먼트만 되면... 
+2                          브라질은 10일 오전 0시(한국시간) 카타르 알 라이얀에 위치한 에듀케이션 시티 스타디움에서 열린 2022 국제축구연맹(FIFA) 카타르 &lt;b&gt;월드컵&lt;/b&gt; 8강전에서 크로아티아와 승부차기 끝에 패배(1-1, PK 2-4)했다. 우승 후보 1순위였던... 
+3   &amp;apos;2022 FIFA 카타르 &lt;b&gt;월드컵&lt;/b&gt;&amp;apos; 잉글랜드 대 프랑스의 토너먼트 8강 경기 / 사진=잉글랜드 축구협회 SNS &amp;apos;2022 FIFA 카타르 &lt;b&gt;월드컵&lt;/b&gt;&amp;apos; 잉글랜드 대 프랑스의 토너먼트 8강 경기가 치러진다. 11일 오전 4시 알바이트 스타디움에서... 
+4 이에 민경훈은 &amp;quot;뭐라고 하고 계시더냐&amp;quot;라며 흥미 있는 반응을 보였지만 윤시윤은 &amp;quot;&lt;b&gt;월드컵&lt;/b&gt; 얘기를 하고 계시더라&amp;quot;라고 예상 외의 답변을 해 보는 이들로 하여금 웃음을 자아냈다. 이에 이수근은 &amp;quot;전세계인의 축제니까&amp;quot;라며... 
+5    사진=MBC &amp;apos;전지적 참견 시점&amp;apos;, SBS &amp;apos;그것이 알고 싶다&amp;apos; 홈페이지 2022 카타르&lt;b&gt;월드컵&lt;/b&gt; 중계방송 때문이다. 이날 밤 12시부터는 &lt;b&gt;월드컵&lt;/b&gt; 8강전 모로코-포르투갈 경기가 열린다. 지상파 TV 3사가 모두 생중계를 한다. MBC는 밤... 
+6                                   최근 &lt;b&gt;월드컵&lt;/b&gt; 한국팀 경기가 있던 날 배달 수요가 공급을 따라가지 못해 1만원의 배달비가 등장할 만큼 배달비는 가파르게 상승하고 있다. 이에 한 소비자는 “배달비 너무 비싸서 놀랄 지경이다. 배달 질까지 내려가면... 
+         publish_date
+1 2022-12-10 21:52:00
+2 2022-12-10 21:51:00
+3 2022-12-10 21:48:00
+4 2022-12-10 21:45:00
+5 2022-12-10 21:40:00
+6 2022-12-10 21:36:00
+                                                       title_text
+1           메시 WC 10호골→바티스투타와 나란히4강서 단독 1위 겨냥
+2            충격패 브라질의 새 감독은팬들은 세계적인 명장 원한다
+3 8강 대진표 잉글랜드 대 프랑스 경기 중계피파랭킹예상선발라인업은
+4     아형 윤시윤 전 세계 추기경들 탄생 시사회서 월드컵 얘기 한창
+5  전지적 참견 시점그것이 알고싶다 2주 연속 결방 월드컵 중계 때문
+6        치킨 눅눅해 지겼네 5천원 배달비도 비싼데 배달도 늦어진다
+                                                                                                                                                                                                        description_text
+1                 카타르 월드컵 8강전에서 네덜란드와 2-2로 비긴 뒤 승부차기에서 4-3으로 승리하며 4강 진출에 성공했다. 오는 14일 오전 4시 브라질을 격추한 크로아티아와 대결을 치른다. 역대 월드컵에서 토너먼트만 되면... 
+2 브라질은 10일 오전 0시(한국시간) 카타르 알 라이얀에 위치한 에듀케이션 시티 스타디움에서 열린 2022 국제축구연맹(FIFA) 카타르 월드컵 8강전에서 크로아티아와 승부차기 끝에 패배(1-1, PK 2-4)했다. 우승 후보 1순위였던... 
+3         2022 FIFA 카타르 월드컵 잉글랜드 대 프랑스의 토너먼트 8강 경기 / 사진=잉글랜드 축구협회 SNS 2022 FIFA 카타르 월드컵 잉글랜드 대 프랑스의 토너먼트 8강 경기가 치러진다. 11일 오전 4시 알바이트 스타디움에서... 
+4            이에 민경훈은 뭐라고 하고 계시더냐라며 흥미 있는 반응을 보였지만 윤시윤은 월드컵 얘기를 하고 계시더라라고 예상 외의 답변을 해 보는 이들로 하여금 웃음을 자아냈다. 이에 이수근은 전세계인의 축제니까라며... 
+5          사진=MBC 전지적 참견 시점, SBS 그것이 알고 싶다 홈페이지 2022 카타르월드컵 중계방송 때문이다. 이날 밤 12시부터는 월드컵 8강전 모로코-포르투갈 경기가 열린다. 지상파 TV 3사가 모두 생중계를 한다. MBC는 밤... 
+6           최근 월드컵 한국팀 경기가 있던 날 배달 수요가 공급을 따라가지 못해 1만원의 배달비가 등장할 만큼 배달비는 가파르게 상승하고 있다. 이에 한 소비자는 배달비 너무 비싸서 놀랄 지경이다. 배달 질까지 내려가면... </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span><span class='op'>(</span><span class='va'>news_worldcup_sim</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                                                                                                 title
+995                                       &lt;b&gt;월드컵&lt;/b&gt; 8강전도 멈췄다…그라운드로 뛰어드는 관중들, 왜?
+996                     &amp;apos;랭킹 1위&amp;apos; 김민선, &lt;b&gt;월드컵&lt;/b&gt; 3회 연속 우승...생애 첫 36초대 진입
+997                                                          꿈의 대진? 어림없지!…9일 밤 &lt;b&gt;월드컵&lt;/b&gt;
+998                  [&lt;b&gt;월드컵&lt;/b&gt;] 8년 만에 4강 진출에도 화난 메시 &amp;quot;심판 판정에 분노 느껴&amp;quot;
+999                     [&lt;b&gt;월드컵&lt;/b&gt;] 16강까지 경고 한번 없는 잉글랜드…&amp;apos;축구도 신사적으로&amp;apos;
+1000 [간밤의 &lt;b&gt;월드컵&lt;/b&gt;] &amp;apos;펠레의 저주?&amp;apos; 브라질 충격 탈락...메시-네이마르 &amp;apos;희비 교...
+                                                       originallink
+995            https://view.asiae.co.kr/article/2022121018544394179
+996                       http://www.osen.co.kr/article/G1112005893
+997  https://www.khan.co.kr/sports/worldcup/article/202212082228005
+998                           https://www.news1.kr/articles/4890739
+999     https://www.yna.co.kr/view/AKR20221209122400007?input=1195m
+1000                   http://news.tf.co.kr/read/soccer/1985087.htm
+                                                              link
+995  https://n.news.naver.com/mnews/article/277/0005190071?sid=104
+996  https://sports.news.naver.com/news.nhn?oid=109&amp;aid=0004755695
+997  https://n.news.naver.com/mnews/article/032/0003191776?sid=104
+998  https://n.news.naver.com/mnews/article/421/0006511536?sid=104
+999  https://n.news.naver.com/mnews/article/001/0013633989?sid=104
+1000 https://n.news.naver.com/mnews/article/629/0000189389?sid=104
+                                                                                                                                                                                                                                                    description
+995                                 2022 국제축구연맹(FIFA) 카타르 &lt;b&gt;월드컵&lt;/b&gt;에서 관중의 경기장 난입이 잇따르고 있다. 조별리그 경기 도중... 그는 2014년 브라질 &lt;b&gt;월드컵&lt;/b&gt; 결승전 독일과 아르헨티나의 경기에서도 그라운드에 난입해 물의를 빚었다. 당시... 
+996                                    의정부시청)이 &lt;b&gt;월드컵&lt;/b&gt; 3회 연속 우승을 달성하며 랭킹 1위의 위용을 떨쳤다. 김민선은 10일(한국시간) 캐나다 캘거리 올림픽 오벌에서 열린 2022-2023 국제빙상경기연맹(ISU) 스피드스케이팅 &lt;b&gt;월드컵&lt;/b&gt; 3차 대회 여자... 
+997                            32년 만에 남미의 두 강호가 &lt;b&gt;월드컵&lt;/b&gt;에서 만날까. 2022 카타르 &lt;b&gt;월드컵&lt;/b&gt;도 막바지를 향하고 있다. 8강이 가려진 가운데 오는 주말부터 4강 경쟁이 시작된다. 10일 0시 브라질-크로아티아(에듀케이션 시티 스타디움), 오전 4시... 
+998                          카타르 &lt;b&gt;월드컵&lt;/b&gt; 8강전에서 연장전까지 2-2로 비긴 뒤 펼쳐진 승부차기에서 4PK3으로 이겼다. 이로써... 이는 역대 &lt;b&gt;월드컵&lt;/b&gt; 한 경기 최다 옐로 카드 기록이다. 이날 AFP통신 등 외신에 따르면 메시는 경기 후 &amp;quot;나는 주심에... 
+999              2022 국제축구연맹(FIFA) 카타르 &lt;b&gt;월드컵&lt;/b&gt;이 16강까지 일정을 마친 가운데 &amp;apos;신사의 나라&amp;apos; 잉글랜드가 유일하게... 사우디아라비아는 2018년 러시아 &lt;b&gt;월드컵&lt;/b&gt; 때는 경고 1장으로 32개 참가국 가운데 최소를 기록했다. 2018년 러시아... 
+1000 10일 2022 카타르 &lt;b&gt;월드컵&lt;/b&gt; 8강전 크로아티아 42(1-1) 브라질 네덜란드 34(2-2) 아르헨티나 14일 아르헨-크로아 4강 격돌 &amp;apos;펠레의 저주&amp;apos;인가. &lt;b&gt;월드컵&lt;/b&gt;의 &amp;apos;영원한 우승 후보&amp;apos; 브라질이 또 탈락하며 네이마르가 눈물을 흘렸다. 리오넬... 
+            publish_date
+995  2022-12-10 20:22:00
+996  2022-12-10 14:59:00
+997  2022-12-08 22:31:00
+998  2022-12-10 10:16:00
+999  2022-12-09 16:45:00
+1000 2022-12-10 07:58:00
+                                                         title_text
+995              월드컵 8강전도 멈췄다그라운드로 뛰어드는 관중들 왜
+996         랭킹 1위 김민선 월드컵 3회 연속 우승생애 첫 36초대 진입
+997                                 꿈의 대진 어림없지9일 밤 월드컵
+998    월드컵 8년 만에 4강 진출에도 화난 메시 심판 판정에 분노 느껴
+999        월드컵 16강까지 경고 한번 없는 잉글랜드축구도 신사적으로
+1000 간밤의 월드컵 펠레의 저주 브라질 충격 탈락메시네이마르 희비 교
+                                                                                                                                                                                                         description_text
+995         2022 국제축구연맹(FIFA) 카타르 월드컵에서 관중의 경기장 난입이 잇따르고 있다. 조별리그 경기 도중... 그는 2014년 브라질 월드컵 결승전 독일과 아르헨티나의 경기에서도 그라운드에 난입해 물의를 빚었다. 당시... 
+996            의정부시청)이 월드컵 3회 연속 우승을 달성하며 랭킹 1위의 위용을 떨쳤다. 김민선은 10일(한국시간) 캐나다 캘거리 올림픽 오벌에서 열린 2022-2023 국제빙상경기연맹(ISU) 스피드스케이팅 월드컵 3차 대회 여자... 
+997    32년 만에 남미의 두 강호가 월드컵에서 만날까. 2022 카타르 월드컵도 막바지를 향하고 있다. 8강이 가려진 가운데 오는 주말부터 4강 경쟁이 시작된다. 10일 0시 브라질-크로아티아(에듀케이션 시티 스타디움), 오전 4시... 
+998        카타르 월드컵 8강전에서 연장전까지 2-2로 비긴 뒤 펼쳐진 승부차기에서 4PK3으로 이겼다. 이로써... 이는 역대 월드컵 한 경기 최다 옐로 카드 기록이다. 이날 AFP통신 등 외신에 따르면 메시는 경기 후 나는 주심에... 
+999  2022 국제축구연맹(FIFA) 카타르 월드컵이 16강까지 일정을 마친 가운데 신사의 나라 잉글랜드가 유일하게... 사우디아라비아는 2018년 러시아 월드컵 때는 경고 1장으로 32개 참가국 가운데 최소를 기록했다. 2018년 러시아... 
+1000 10일 2022 카타르 월드컵 8강전 크로아티아 42(1-1) 브라질 네덜란드 34(2-2) 아르헨티나 14일 아르헨-크로아 4강 격돌 펠레의 저주인가. 월드컵의 영원한 우승 후보 브라질이 또 탈락하며 네이마르가 눈물을 흘렸다. 리오넬... </code></pre>
+</div>
+<h3 id="간단한-데이터-요약">간단한 데이터 요약</h3>
+<h4 id="뉴스-빈발-단어">뉴스 빈발 단어</h4>
+<ul>
+<li>빈발단어를 워드클라우드로 시각화하는 함수를 만듦</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># create UDF</span>
+<span class='va'>create_wordcloud</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>data</span>, <span class='va'>remove_n</span> <span class='op'>=</span> <span class='fl'>5</span>, <span class='va'>min_freq</span> <span class='op'>=</span> <span class='fl'>5</span>, <span class='va'>background</span> <span class='op'>=</span> <span class='st'>"white"</span><span class='op'>)</span> <span class='op'>{</span>
+  <span class='va'>data</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/nchar.html'>nchar</a></span><span class='op'>(</span><span class='va'>description_text</span><span class='op'>)</span> <span class='op'>&gt;</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>   
+    <span class='fu'>tidytext</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tidytext/man/unnest_tokens.html'>unnest_tokens</a></span><span class='op'>(</span><span class='va'>noun</span>, <span class='va'>description_text</span>, <span class='fu'>bitTA</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/bitTA/man/morpho_mecab.html'>morpho_mecab</a></span>, type <span class='op'>=</span> <span class='st'>"noun"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>noun</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>     
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>ungroup</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>n</span> <span class='op'>&gt;=</span> <span class='va'>min_freq</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/ranking.html'>row_number</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>&gt;</span> <span class='va'>remove_n</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+    <span class='fu'>wordcloud2</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/wordcloud2/man/wordcloud2.html'>wordcloud2</a></span><span class='op'>(</span>backgroundColor <span class='op'>=</span> <span class='va'>background</span>, 
+                           fontFamily <span class='op'>=</span> <span class='st'>"NanumSquare"</span><span class='op'>)</span>
+<span class='op'>}</span>
+</code></pre>
+</div>
+</div>
+<ul>
+<li>날짜 기준으로 정렬 수집한 뉴스에 대해서 워드클라우드를 그려
+봅니다.</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>bitReport</span><span class='op'>)</span>
+
+<span class='va'>news_worldcup_date</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>create_wordcloud</span><span class='op'>(</span>remove_n <span class='op'>=</span> <span class='fl'>20</span>, min_freq <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div class="figure" style="text-align: center">
+<div id="htmlwidget-b361b9ace907b2b283d3" style="width:672px;height:672px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b361b9ace907b2b283d3">{"x":{"word":["기자","네덜란드","출전","포르투갈","오전","감독","카타르월드컵","스타디움","리그","잉글랜드","취재","뒤","최고","끝","대회","맞대결","메시","기록","후","자신","이날","승리","후보","이후","복권","국가","인터뷰","조","탈락","경기장","금메달","사진","전","적설","패배","월","기간","독일","상태","승부","앵커","연속","최근","모로코","위치","인터넷","시티","얀","에듀케이션","도박","멀티","스피드","시선","여정","영입","위로","유명","이야기","출연","토트넘","마지막","차지","토너먼트","그라운드","시점","전지","참견","동행","사이트","성공","판매","정도","가나","가능","공격수","기대","눈물","대한민국","도전","도중","동안","때","마스크","매체","몸","부상","생각","세계","알","여자","연장전","응원","이유","일정","전문가","주장","진행","찬","최초","팬","편성표","할인","황희","기자석","꿈","그랜트","랭킹","통신","날","중요","가운데","방송","중계","이하","파리","미소","나이","사고","간판","개막","경고","고양이","골절","관심","구체","국가주석","국내외","기념","나라","난입","논란","뉴스","다음","당시","대신","덕분","도하","득점","뜻","마마","만찬","맥주","목표","무승부","발생","밤","베트남","복귀","빙상","사망","사실","살인","상","상대","상무","세리머니","소식","수","수술","스케이팅","스페인","시각","아들","아리","안면","언론","여운","연맹","영빈관","영상","올림픽","와이드","외모","의학","이벤트","이변","이적","인기","접전","제의","조별","조율","종가","주시","참가","첼시","치치","치킨","코스타리카","토요","통산","통풍","투혼","파크","팔","패","해당","해외","현지","혈투","확인","확정","활약","휴식기","흥분","희비","결승","경환","도움","생제르맹","이상","전문","홍","격무","계주","과정","목","배달비","충돌","티켓","혼성","금광","길","매점","복권방","상사","오늘","오케이","층","가치","강조","스트라이커","증명","입장","얘기","예상","웃음","흥미","바이트","라이","배달","역할","베테랑","세상","역대","가","가담","각자","감사","감정","감회","강팀","강행","개막전","개인","개최","건강","게재","겨냥","겨울","격돌","결과","결방","결승전","결승행","결장","결정","경험담","계속","계약","계정","고민","고액","공격","공격력","공공연","공인","과","관심도","관중","구단","구입","국빈","국제","귀국","그동안","그때","글로브","기대주","기분","기상캐스터","기적","남미","남아공월드컵","남자","내년","네티즌","녀","노래","노출","눈길","뉴스레터","뉴스룸","뉴욕타임즈","느낌","능력","다들","다짐","단축","단판","달성","대통령","댄스","덜미","데스","도발","도쿄","독일월드컵","동계","동기","뒷","득점왕","라스트","라오스","러브","러시아","런던","리포트","마무리","마음","막말","말","말씀","맞이","멤버","며느리","모델","모습","몸속","무대","물의","뮌헨","미취학","민이","바","밖","반대","발","발목","배출","별명","본래","본선","부여","분데스리가","불안","블랙홀","블럭","비교","비하인드","빅","빅매치","사상","사이","사치","상당","상대편","상시","새벽","샤","서비스","선두","선발","선방","선배","선사","선수단","소년","소셜네트워크","소신","소집","소피앙","소화","소회","송","수준","수퍼","순서","숫자","슈퍼스타","스케줄","스토리","스튜디오","스포츠","승리자","승점","시","시도","시속","시작","시장","시전","시즌","시청자","신경전","실감","실력","실패","아쉬움","악마","악화","알코르","앓","양팀","어린이","어제","언쟁","엄마","에이스","에피소드","여부","여파","역전","역전패","연장","열창","예정","오열","완전","외신","요산","우려","운","원래","원정","웨일스","유","유력","유발","윤","응원가","응원단","의견","의료","의미","의상","의지","이달","이때","이란","이름","이용","이적료","인스타그램","일","입","입국","자랑","자리","자유","자진","자타","장면","장소","장신","재개","저명","저주","적극","전력","전반전","전세계","전통","점","정규","제기","제대","제작진","조규","조이뉴스24","조합","종석","종일","종일권","좌절감","주가","주말","주심","주역","주요","중거리","중순","직전","직후","진검","집중","징크스","차례","차이","착용","참시","채널","체감","최다","최대","최종전","축적","춘재","출신","충격","취임","치맥","침착","침투","캐나다","캘거리","캡틴","케인","콜","쿠션","퀴즈","크로스","키","킥","탄생","탈","태극전사","퇴장","투명","투호","튀니지","트로피","특별","패스","페","페널티","편집","평가전","평소","포기","포옹","폭등","풀타임","풋볼","프라이부르크","플레이어","피겨","필드","필요","한때","한옥","한편","합류","핫","해","해리","행복","행사","향후","헤딩","헤딩슛","현장","호골","화답","화력","화제","환영","환호","활기","활약상","회복","획득","훈련","휴가","휴식","흥","희망","히어로","맹활약","생애","길목","무난","월이","국회","기한","내년도","담판","여야","예산안","처리","공급","등장","상승","소비자","수요","질","국내","누리","생중계","수도","지상파","카르마","홈페이지","답변","데일리","데일리메일","반응","선","세계인","중단","축제","협회","매력","미남","발산","비타민","수트","순위","원피스","인간","진가"],"freq":[117,117,110,110,109,108,103,102,100,99,98,94,92,91,89,89,80,79,77,76,75,74,72,70,68,67,67,60,60,59,58,58,57,56,52,51,50,50,50,50,50,50,46,45,45,44,42,42,42,40,40,40,40,40,40,40,40,40,40,40,39,39,37,36,35,35,35,34,34,34,34,31,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,29,29,28,28,28,26,26,25,25,25,24,24,22,21,21,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,19,19,19,19,19,19,19,18,18,18,18,18,18,18,18,17,17,17,17,17,17,17,17,16,16,16,16,15,14,14,14,14,13,12,12,12,11,11,11,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,9,9,8,8,8,7,7,7,7,7,7,7,6,6,6,6,6,6,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,3,2,2,2,2,2,2,2,2,2],"fontFamily":"NanumSquare","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":1.53846153846154,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+(#fig:wcloud_wcupdate)날짜 기준 월드컵 뉴스
+</p>
+</div>
+</div>
+<ul>
+<li>유사도 기준으로 정렬 수집한 뉴스에 대해서 워드클라우드를 그려
+봅니다.</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>create_wordcloud</span><span class='op'>(</span>remove_n <span class='op'>=</span> <span class='fl'>20</span>, min_freq <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div class="figure" style="text-align: center">
+<div id="htmlwidget-07957e42ce3f4af6cc79" style="width:672px;height:672px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-07957e42ce3f4af6cc79">{"x":{"word":["연속","크로아티아","국가","스타디움","끝","네덜란드","기록","전","탈락","대통령","취재","아시아","리그","메시","이후","치치","스케이팅","스피드","연맹","후보","인사","사망","경기장","뒤","감사","가운데","조별","여자","시티","에듀케이션","선수","팬","국제","빙상","시청","캐나다","러시아","만찬","선발","응원","자신","통산","얀","후","골","기간","전문","도박","올림픽","캘거리","이날","최다","연장전","스포츠","국민","귀국","금메달","기자석","대한민국","디비전","보도","세계","소속","스페인","승리","연장","월","이하","최고","프랑스","호골","호재","스타","도움","나세르","노동자","의학","전문가","주장","카터","독일","달성","남미","부상","위원장","조직","채널","발생","잉글랜드","경쟁국","도전","개최","결승","곳","관광","나이","득점","무대","베테랑","본선","사고","상대","서비스","선전","성공","세상","아쉬움","윤","자리","적설","정도","지난달","지지율","차지","초청","행진","환영","황희","진행","예정","결장","관련","이주","토트넘","개막","도중","랭킹","강호","글로벌","착용","북중미","통신","현지","기사","내용","때","요약","격돌","마무리","전망","가능","감동","개인","격려","결과","고양이","공격수","나라","녹화","논란","도하","드","득점왕","등장","말","문제","바","부문","분석","빙속","사회관계망","성과","성적","신","아나운서","여사","여성","여제","영빈관","이변","이상","이야기","인권","인스타그램","전반","제목","제외","좌절","주시","준준결승","지원","지휘봉","찬","출연","캡틴","퇴장","파업","판","페","포르투갈","프리미어리그","해소","후반","후회","尹","新","안면","인터뷰","처음","마지막","맞대결","생애","소식","결정","로이터통신","빈축","사건","사용","삶","수술","일부","죽음","투명","표현","그라운드","당시","살인","소화","스케줄","최근","상태","예상","우려","가나","복귀","오전","일","매체","역대","외신","주말","주심","해외","난입","유일","일정","눈물","저주","7","가디언","가치","각종","간판","갈등","강력","강에","강조","개발","개최국","거리","건강","걸출","검은색","게시","격파","견인차","결별","경기력","경우","계속","공감","공격","공공연","공동","공신","과정","관심","교체","구체","군단","규정","그림자","근처","글","금","기념","기여","기준","기회","기후","남아공월드컵","내년","너리","네티즌","노력","노출","노틸러스","논산","눈길","뉴스","뉴스레터","뉴스룸","뉴시스","다층","담금질","대결","대세","대약진","대통령실","대파","도마","도어","독자","동시","동안","동점","뒴","득점자","디","뜻","레드카드","마찬가지","막","만족","매치","멀티","명단","모델","목","무승부","무패","문어","문턱","미녀","민이","발언","방문","방송","배출","벤치","별개","보호대","복장","부인","부트","붐","브라질월드컵","빅매치","뻔","사이","사이트","사진","사태","사회","삼바","상금","상쾌","생각","선봉","선사","선제골","선착","설욕","성사","성원","소감","소셜네트워크","소신","소회","수세기","수장","수집","순간","순위","숫자","스위스","스테핑","스트라이커","시각","시사","시상대","시즌","실패","심판","악마","악재","악화","안전","앙숙","앞길","약속","약식","어깨","어려움","억대","언론","언론인","에피소드","여부","여운","여정","역할","연대","영향","예선","옐로카드","와이드","완장","외국","왼쪽","요원","요인","우승국","운동","운영","원정","유명","유명세","은퇴","응원석","응원전","의상","의지","이달","이벤트","이적","이탈리아","이튿날","인","인간","인구수","인류","인사이더","인터","일본","잉글리시","자국민","자랑","자신감","자존심","장","장면","재단","재입소","적용","전남","전남도","전도사","전성기","전후반","절대","정규","정상","제기","조","조규","조롱","종반","주목","주역","준결승","준비","준우승","중계","중심","중심부","중요","증명","지급","지휘","직전","차례","차세대","참가","창","첫날","체감","체제","촬영","최종","최초","추가","추정","출발","취임","침착","코르","코스타리카","코파아메리카","크로노그래프","타이","태극기","토너먼트","토요","통","통신원","투입","투호","티셔츠","파급력","평화","포상금","포인트","포함","풋볼","프로축구","필요","하루","한일월드컵","해","해결사","해변","해설위원","햄스트링","향후","현장","현황","협박","홍보","홍보관","화물","확인","확정","황제","회견","효과","휴식","휴식기","흥","흥행","희비","강렬","다양","마스크","상황","설전","오후","종료","꿈","날","다음","맹활약","문화","법안","본래","사실","상임위","생제르맹","설명","소위","연기","연락","차관","체육","파리","결승전","관중","물의","사인","정확","골절","몸","별명","수퍼","위용","히어로","경쟁","막바지","비교","시도","시작","헤딩슛","모습","옐","카드","경고","사우디아라비아","신사","참가국","최소"],"freq":[145,144,120,113,109,109,105,104,101,100,100,97,96,93,93,90,85,85,85,81,80,74,72,72,70,67,66,65,63,63,60,60,55,55,55,55,54,50,50,50,50,50,49,49,48,47,47,46,45,45,43,43,42,41,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,39,38,37,37,37,37,37,37,36,35,34,34,34,34,34,32,32,31,31,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,29,28,27,27,27,27,26,26,25,24,24,24,23,23,23,22,22,22,22,21,21,21,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,19,19,19,18,18,18,18,17,17,17,17,17,17,17,17,17,17,17,16,16,16,16,16,16,15,15,15,14,14,14,14,13,13,13,13,13,13,12,12,12,11,11,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,6,6,6,6,6,5,5,5,5,5,5,4,4,4,4,4,4,3,3,3,2,2,2,2,2],"fontFamily":"NanumSquare","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":1.24137931034483,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+(#fig:wcloud_wcupsim)유사도 기준 월드컵 뉴스
+</p>
+</div>
+</div>
+<h2 id="정규표현식의-이해">정규표현식의 이해</h2>
+<h3 id="패턴-검색">패턴 검색</h3>
+<p>유사도 정렬 기준으로 수집한 뉴스 중에서 선수와 감독의 이름이 포함된
+기사의 건수를 계산합니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>persons</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"벤투"</span>, <span class='st'>"손흥민"</span>, <span class='st'>"조규성"</span>, <span class='st'>"이강인"</span>, <span class='st'>"호날두"</span>, <span class='st'>"메시"</span><span class='op'>)</span>
+
+<span class='va'>persons</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map_int</a></span><span class='op'>(</span>
+    <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>{</span>
+      <span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>description_text</span>, <span class='va'>x</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>tally</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/pull.html'>pull</a></span><span class='op'>(</span><span class='op'>)</span>
+    <span class='op'>}</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1]  20 116  59  10  29 101</code></pre>
+</div>
+<p>각각의 기사에서 해당 선수와 감독의 이름이 평균 몇 번 등장하는지
+계산합니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>persons</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"벤투"</span>, <span class='st'>"손흥민"</span>, <span class='st'>"조규성"</span>, <span class='st'>"이강인"</span>, <span class='st'>"호날두"</span>, <span class='st'>"메시"</span><span class='op'>)</span>
+
+<span class='va'>persons</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map_dbl</a></span><span class='op'>(</span>
+    <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>{</span>
+      <span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>description_text</span>, <span class='va'>x</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>n_talk <span class='op'>=</span> <span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_count.html'>str_count</a></span><span class='op'>(</span><span class='va'>description_text</span>, <span class='va'>x</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span>n_avg <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>n_talk</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+        <span class='fu'><a href='https://dplyr.tidyverse.org/reference/pull.html'>pull</a></span><span class='op'>(</span><span class='op'>)</span>
+    <span class='op'>}</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1.000000 1.801724 1.830508 1.000000 1.689655 1.099010</code></pre>
+</div>
+<h2 id="document-term-matrix의-이해">Document Term Matrix의 이해</h2>
+<h3 id="dtm-생성하기">DTM 생성하기</h3>
+<p>유사도 정렬 기준 뉴스의 Term Frequency 기반의 DTM과 TF-IDF 기반의
+DTM을 생성합니다. 뉴스 데이터는 문서 아이디로 사용할 변수가 없기 때문에
+아이디를 만듧니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_worldcup_sim</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>id <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/ranking.html'>row_number</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h4 id="term-frequency-기반의-dtm">TERM FREQUENCY 기반의 DTM</h4>
+<ul>
+<li>인명인 고유명사도 함께 추출한 DTM을 만들기 위해서
+unnest_noun_ngrams() 함수의 type 인수값에 “noun2”를 사용합니다</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>bitTA</span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/juliasilge/tidytext'>tidytext</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tm.r-forge.r-project.org/'>tm</a></span><span class='op'>)</span>
+
+<span class='va'>dtm_tf</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/bitTA/man/unnest_noun_ngrams.html'>unnest_noun_ngrams</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>description_text</span>, n <span class='op'>=</span> <span class='fl'>1</span>, type <span class='op'>=</span> <span class='st'>"noun2"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='st'>"[[a-zA-Z]]+"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>  
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>id</span>, <span class='va'>term</span>, sort <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/tidytext/man/document_term_casters.html'>cast_dtm</a></span><span class='op'>(</span><span class='va'>id</span>, <span class='va'>term</span>, <span class='va'>n</span><span class='op'>)</span>
+
+<span class='fu'>tm</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tm/man/inspect.html'>inspect</a></span><span class='op'>(</span><span class='va'>dtm_tf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>&lt;&lt;DocumentTermMatrix (documents: 1000, terms: 710)&gt;&gt;
+Non-/sparse entries: 20576/689424
+Sparsity           : 97%
+Maximal term length: 7
+Weighting          : term frequency (tf)
+Sample             :
+     Terms
+Docs  강 년 대표 시간 월드컵 일 축구 카타르 팀 한국
+  146  0  2    1    0      2  1    1      1  1    0
+  245  0  2    1    0      2  1    1      1  1    0
+  344  0  2    1    0      2  1    1      1  1    0
+  443  0  2    1    0      2  1    1      1  1    0
+  47   0  2    1    0      2  1    1      1  1    0
+  542  0  2    1    0      2  1    1      1  1    0
+  641  0  2    1    0      2  1    1      1  1    0
+  740  0  2    1    0      2  1    1      1  1    0
+  839  0  2    1    0      2  1    1      1  1    0
+  938  0  2    1    0      2  1    1      1  1    0</code></pre>
+</div>
+<h4 id="tf-idf-기반의-dtm">TF-IDF 기반의 DTM</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dtm_tfidf</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/bitTA/man/unnest_noun_ngrams.html'>unnest_noun_ngrams</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>description_text</span>, n <span class='op'>=</span> <span class='fl'>1</span>, type <span class='op'>=</span> <span class='st'>"noun2"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='st'>"[[a-zA-Z]]+"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>  
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>id</span>, <span class='va'>term</span>, sort <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/tidytext/man/document_term_casters.html'>cast_dtm</a></span><span class='op'>(</span><span class='va'>id</span>, <span class='va'>term</span>, <span class='va'>n</span>, weighting <span class='op'>=</span> <span class='fu'>tm</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/tm/man/weightTfIdf.html'>weightTfIdf</a></span><span class='op'>)</span>
+
+<span class='fu'>tm</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tm/man/inspect.html'>inspect</a></span><span class='op'>(</span><span class='va'>dtm_tfidf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>&lt;&lt;DocumentTermMatrix (documents: 1000, terms: 710)&gt;&gt;
+Non-/sparse entries: 20576/689424
+Sparsity           : 97%
+Maximal term length: 7
+Weighting          : term frequency - inverse document frequency (normalized) (tf-idf)
+Sample             :
+     Terms
+Docs  강 강전 년 대표 브라질 손흥민 아르헨티나 우승 팀 한국
+  124  0    0  0    0      0      0          0    0  0    0
+  223  0    0  0    0      0      0          0    0  0    0
+  25   0    0  0    0      0      0          0    0  0    0
+  322  0    0  0    0      0      0          0    0  0    0
+  421  0    0  0    0      0      0          0    0  0    0
+  520  0    0  0    0      0      0          0    0  0    0
+  619  0    0  0    0      0      0          0    0  0    0
+  718  0    0  0    0      0      0          0    0  0    0
+  817  0    0  0    0      0      0          0    0  0    0
+  916  0    0  0    0      0      0          0    0  0    0</code></pre>
+</div>
+<h2 id="correlation-analysis">Correlation Analysis</h2>
+<p>각각의 선수와 감독별로 상관계수가 0.4 이상인 단어를 추출해봅니다. ###
+Term Frequency</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>persons</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"벤투"</span>, <span class='st'>"손흥민"</span>, <span class='st'>"조규성"</span>, <span class='st'>"이강인"</span>, <span class='st'>"호날두"</span>, <span class='st'>"메시"</span><span class='op'>)</span>
+
+<span class='va'>persons</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map</a></span><span class='op'>(</span>
+    <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'>tm</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tm/man/findAssocs.html'>findAssocs</a></span><span class='op'>(</span><span class='va'>dtm_tf</span>, terms <span class='op'>=</span> <span class='va'>x</span>, corlimit <span class='op'>=</span> <span class='fl'>0.4</span><span class='op'>)</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[[1]]
+[[1]]$벤투
+  결별   원정 파울루   역대   독일   연속 러시아 
+  1.00   1.00   1.00   0.88   0.84   0.49   0.41 
+
+
+[[2]]
+[[2]]$손흥민
+토트넘   도박   결정   수술   투명   감사   의학 전문가   주장   안면 
+  0.67   0.61   0.59   0.59   0.59   0.57   0.54   0.54   0.54   0.52 
+  인사   출전     팬   결장   생각   응원   후회 
+  0.51   0.51   0.51   0.45   0.45   0.43   0.41 
+
+
+[[3]]
+[[3]]$조규성
+      전북       출연   아나운서       주시       뉴스       대세 
+      0.87       0.76       0.64       0.64       0.64       0.64 
+      현대       스타       적설       자신       진행     이야기 
+      0.64       0.62       0.57       0.46       0.46       0.44 
+      가치       강조 스트라이커       중요       증명     뉴스룸 
+      0.42       0.42       0.42       0.42       0.42       0.42 
+        건       구체       멀티   에피소드     와이드       이적 
+      0.42       0.42       0.42       0.42       0.42       0.42 
+      최초       토요 
+      0.42       0.42 
+
+
+[[4]]
+[[4]]$이강인
+  여기   조규   주목   처음 북중미   본선   성공     이 
+  1.00   1.00   1.00   0.72   0.66   0.57   0.57   0.43 
+
+
+[[5]]
+[[5]]$호날두
+        제외     포르투갈       스위스         시각         코르 
+        0.95         0.82         0.67         0.67         0.67 
+크리스티아누         교체         명단         벤치       산투스 
+        0.67         0.67         0.67         0.67         0.67 
+    페르난두         협박         선발         보도         매체 
+        0.67         0.67         0.66         0.66         0.58 
+        소식           드       이야기         현지 
+        0.49         0.46         0.46         0.43 
+
+
+[[6]]
+[[6]]$메시
+      도움       통산 아르헨티나   토너먼트         호   네덜란드 
+      0.66       0.59       0.55       0.55       0.55       0.52 
+바티스투타       상대   승부차기       호골     리오넬       남미 
+      0.45       0.45       0.44       0.43       0.43       0.42 
+      최다 
+      0.40 </code></pre>
+</div>
+<h2 id="연관분석">연관분석</h2>
+<h3 id="binary-term-frequency-기반-dtm-생성">Binary Term Frequency 기반
+DTM 생성</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dtm_bin_tf</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/bitTA/man/unnest_noun_ngrams.html'>unnest_noun_ngrams</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>description_text</span>, n <span class='op'>=</span> <span class='fl'>1</span>, type <span class='op'>=</span> <span class='st'>"noun2"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='st'>"[[a-zA-Z]]+"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>  
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>id</span>, <span class='va'>term</span>, sort <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/tidytext/man/document_term_casters.html'>cast_dtm</a></span><span class='op'>(</span><span class='va'>id</span>, <span class='va'>term</span>, <span class='va'>n</span>, weighting <span class='op'>=</span> <span class='fu'>tm</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/tm/man/weightBin.html'>weightBin</a></span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="불용어-제거">불용어 제거</h3>
+<p>상위 50위인 단어를 불용어로 처리하여 제거합니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>stop_words</span> <span class='op'>&lt;-</span> <span class='va'>dtm_bin_tf</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='fl'>2</span>, <span class='va'>sum</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span><span class='op'>(</span>decreasing <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='st'>"["</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>30</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>stop_words</span>
+</code></pre>
+</div>
+<pre><code> [1] &quot;월드컵&quot;       &quot;카타르&quot;       &quot;일&quot;           &quot;한국&quot;        
+ [5] &quot;팀&quot;           &quot;축구&quot;         &quot;강&quot;           &quot;대표&quot;        
+ [9] &quot;시간&quot;         &quot;국제축구연맹&quot; &quot;년&quot;           &quot;우승&quot;        
+[13] &quot;강전&quot;         &quot;대회&quot;         &quot;브라질&quot;       &quot;경기&quot;        
+[17] &quot;진출&quot;         &quot;이번&quot;         &quot;아르헨티나&quot;   &quot;승부차기&quot;    
+[21] &quot;연속&quot;         &quot;만&quot;           &quot;카타르월드컵&quot; &quot;회&quot;          
+[25] &quot;크로아티아&quot;   &quot;손흥민&quot;       &quot;출전&quot;         &quot;차&quot;          
+[29] &quot;스타디움&quot;     &quot;감독&quot;        </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dtm_bin_tf</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/bitTA/man/unnest_noun_ngrams.html'>unnest_noun_ngrams</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>description_text</span>, n <span class='op'>=</span> <span class='fl'>1</span>, type <span class='op'>=</span> <span class='st'>"noun2"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='va'>term</span> <span class='op'><a href='https://rdrr.io/r/base/match.html'>%in%</a></span> <span class='va'>stop_words</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='st'>"[[a-zA-Z]]+|[[0-9]]+"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>  
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>id</span>, <span class='va'>term</span>, sort <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/tidytext/man/document_term_casters.html'>cast_dtm</a></span><span class='op'>(</span><span class='va'>id</span>, <span class='va'>term</span>, <span class='va'>n</span>, weighting <span class='op'>=</span> <span class='fu'>tm</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/tm/man/weightBin.html'>weightBin</a></span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="transactions-생성하기">Transactions 생성하기</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'><a href='https://github.com/mhahsler/arules'>"arules"</a></span><span class='op'>)</span>
+
+<span class='va'>trans</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/methods/as.html'>as</a></span><span class='op'>(</span><span class='va'>dtm_bin_tf</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='op'>)</span>, <span class='st'>"transactions"</span><span class='op'>)</span>
+<span class='va'>trans</span>
+</code></pre>
+</div>
+<pre><code>transactions in sparse format with
+ 1000 transactions (rows) and
+ 679 items (columns)</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>trans</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>transactions as itemMatrix in sparse format with
+ 1000 rows (elements/itemsets/transactions) and
+ 679 columns (items) and a density of 0.01935199 
+
+most frequent items:
+      끝 네덜란드       전     메시     탈락  (Other) 
+     109      109      104      101      101    12616 
+
+element (itemset/transaction) length distribution:
+sizes
+  5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  22 
+  9  50  10  10  60  80  67 146 140  88  82  69  85  49  17  28  10 
+
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   5.00   11.00   13.00   13.14   16.00   22.00 
+
+includes extended item information - examples:
+  labels
+1   호재
+2 스페인
+3   국가
+
+includes extended transaction information - examples:
+  transactionID
+1            25
+2            28
+3            29</code></pre>
+</div>
+<h3 id="연관규칙-생성하기">연관규칙 생성하기</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rules</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/arules/man/apriori.html'>apriori</a></span><span class='op'>(</span><span class='va'>trans</span>, parameter <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>support <span class='op'>=</span> <span class='fl'>0.05</span>, conf <span class='op'>=</span> <span class='fl'>0.6</span>, target <span class='op'>=</span> <span class='st'>"rules"</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Apriori
+
+Parameter specification:
+ confidence minval smax arem  aval originalSupport maxtime support
+        0.6    0.1    1 none FALSE            TRUE       5    0.05
+ minlen maxlen target  ext
+      1     10  rules TRUE
+
+Algorithmic control:
+ filter tree heap memopt load sort verbose
+    0.1 TRUE TRUE  FALSE TRUE    2    TRUE
+
+Absolute minimum support count: 50 
+
+set item appearances ...[0 item(s)] done [0.00s].
+set transactions ...[679 item(s), 1000 transaction(s)] done [0.01s].
+sorting and recoding items ... [51 item(s)] done [0.00s].
+creating transaction tree ... done [0.00s].
+checking subsets of size 1 2 3 4 5 6 7 done [0.00s].
+writing ... [480 rule(s)] done [0.00s].
+creating S4 object  ... done [0.00s].</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span><span class='op'>(</span><span class='va'>rules</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>set of 480 rules
+
+rule length distribution (lhs + rhs):sizes
+  2   3   4   5   6   7 
+ 62 120 144 105  42   7 
+
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  2.000   3.000   4.000   3.929   5.000   7.000 
+
+summary of quality measures:
+    support          confidence        coverage      
+ Min.   :0.05000   Min.   :0.6471   Min.   :0.05000  
+ 1st Qu.:0.05500   1st Qu.:1.0000   1st Qu.:0.05500  
+ Median :0.05500   Median :1.0000   Median :0.05500  
+ Mean   :0.05576   Mean   :0.9755   Mean   :0.05763  
+ 3rd Qu.:0.05500   3rd Qu.:1.0000   3rd Qu.:0.05500  
+ Max.   :0.07500   Max.   :1.0000   Max.   :0.08600  
+      lift            count      
+ Min.   : 8.627   Min.   :50.00  
+ 1st Qu.:13.333   1st Qu.:55.00  
+ Median :13.333   Median :55.00  
+ Mean   :14.760   Mean   :55.76  
+ 3rd Qu.:18.182   3rd Qu.:55.00  
+ Max.   :20.000   Max.   :75.00  
+
+mining info:
+  data ntransactions support confidence
+ trans          1000    0.05        0.6
+                                                                                  call
+ apriori(data = trans, parameter = list(support = 0.05, conf = 0.6, target = &quot;rules&quot;))</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>arules</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/arules/man/inspect.html'>inspect</a></span><span class='op'>(</span><span class='va'>rules</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span><span class='op'>]</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>    lhs             rhs          support confidence coverage lift    
+[1] {시티}       =&gt; {에듀케이션} 0.063   1.0000000  0.063    15.87302
+[2] {에듀케이션} =&gt; {시티}       0.063   1.0000000  0.063    15.87302
+[3] {윤석열}     =&gt; {여러분}     0.050   1.0000000  0.050    16.66667
+[4] {여러분}     =&gt; {윤석열}     0.050   0.8333333  0.060    16.66667
+[5] {윤석열}     =&gt; {대통령}     0.050   1.0000000  0.050    14.28571
+    count
+[1] 63   
+[2] 63   
+[3] 50   
+[4] 50   
+[5] 50   </code></pre>
+</div>
+<h3 id="연관규칙-시각화하기">연관규칙 시각화하기</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'><a href='https://github.com/mhahsler/arulesViz'>"arulesViz"</a></span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/pkg/arulesViz/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>rules</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="classifier_bert_files/figure-html5/rules_plot-1.png" width="1152" style="display: block; margin: auto;" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>rule2</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/arules/man/sort.html'>sort</a></span><span class='op'>(</span><span class='va'>rules</span>, by <span class='op'>=</span> <span class='st'>"confidence"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/arulesViz/man/inspectDT.html'>inspect</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/pkg/arules/man/associations-class.html'>head</a></span><span class='op'>(</span><span class='va'>rule2</span>, n <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>     lhs             rhs          support confidence coverage
+[1]  {시티}       =&gt; {에듀케이션} 0.063   1          0.063   
+[2]  {에듀케이션} =&gt; {시티}       0.063   1          0.063   
+[3]  {윤석열}     =&gt; {여러분}     0.050   1          0.050   
+[4]  {윤석열}     =&gt; {대통령}     0.050   1          0.050   
+[5]  {조별}       =&gt; {리그}       0.056   1          0.056   
+[6]  {미국}       =&gt; {취재}       0.058   1          0.058   
+[7]  {취재}       =&gt; {미국}       0.058   1          0.058   
+[8]  {미국}       =&gt; {기자}       0.058   1          0.058   
+[9]  {취재}       =&gt; {기자}       0.058   1          0.058   
+[10] {빙상}       =&gt; {국제}       0.055   1          0.055   
+     lift     count
+[1]  15.87302 63   
+[2]  15.87302 63   
+[3]  16.66667 50   
+[4]  14.28571 50   
+[5]  11.62791 56   
+[6]  17.24138 58   
+[7]  17.24138 58   
+[8]  10.20408 58   
+[9]  10.20408 58   
+[10] 18.18182 55   </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/arulesViz/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>rules</span>, method <span class='op'>=</span> <span class='st'>"grouped"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="classifier_bert_files/figure-html5/rules_plot-2.png" width="1152" style="display: block; margin: auto;" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/arulesViz/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>rules</span>, method <span class='op'>=</span> <span class='st'>"graph"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="classifier_bert_files/figure-html5/rules_plot-3.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+<h2 id="단어의-계층적-군집분석">단어의 계층적 군집분석</h2>
+<h3 id="희박-단어의-제거">희박 단어의 제거</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_bin_tf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1000  679</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>compact_bin</span> <span class='op'>&lt;-</span> <span class='fu'>tm</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tm/man/removeSparseTerms.html'>removeSparseTerms</a></span><span class='op'>(</span><span class='va'>dtm_bin_tf</span>, sparse <span class='op'>=</span> <span class='fl'>0.985</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='va'>compact_bin</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>compact_bin</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1000  253</code></pre>
+</div>
+<h3 id="비상사도-행렬-생성">비상사도 행렬 생성</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mat</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/t.html'>t</a></span><span class='op'>(</span><span class='va'>compact_bin</span><span class='op'>)</span>
+
+<span class='va'>dist_matrix</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/arules/man/dissimilarity.html'>dist</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/scale.html'>scale</a></span><span class='op'>(</span><span class='va'>mat</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="clustering">Clustering</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fit</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/hclust.html'>hclust</a></span><span class='op'>(</span><span class='va'>dist_matrix</span>, method <span class='op'>=</span> <span class='st'>"ward.D"</span><span class='op'>)</span>
+<span class='va'>fit</span>
+</code></pre>
+</div>
+<pre><code>
+Call:
+hclust(d = dist_matrix, method = &quot;ward.D&quot;)
+
+Cluster method   : ward.D 
+Distance         : euclidean 
+Number of objects: 253 </code></pre>
+</div>
+<h3 id="clustering-1">Clustering</h3>
+<p>k개 군집을 나눕니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>k</span> <span class='op'>&lt;-</span> <span class='fl'>6</span>
+
+<span class='fu'><a href='https://rdrr.io/pkg/arulesViz/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>fit</span><span class='op'>)</span>
+<span class='va'>cluster_list</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/rect.hclust.html'>rect.hclust</a></span><span class='op'>(</span><span class='va'>fit</span>, k <span class='op'>=</span> <span class='va'>k</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="classifier_bert_files/figure-html5/cluster_list-1.png" width="1152" style="display: block; margin: auto;" /></p>
+</div>
+<h3 id="군집의-해석">군집의 해석</h3>
+<p>k개 클러스터를 구성하는 단어들의 목록을 조회합니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>k</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map</a></span><span class='op'>(</span>
+    <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>{</span>
+      <span class='va'>cluster_list</span><span class='op'>[[</span><span class='va'>x</span><span class='op'>]</span><span class='op'>]</span>
+    <span class='op'>}</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[[1]]
+  김민선 스케이팅   스피드     국제   디비전     빙상     여자 
+      22       37       38      142      143      144      146 
+    연맹     오벌   올림픽   의정부   캐나다   캘거리 
+     147      148      149      150      151      152 
+
+[[2]]
+      사망       개최     위원장       조직       관련     나세르 
+         9         31         55         56        128        130 
+    노동자 로이터통신       빈축       사건       사용         삶 
+       131        132        133        134        135        136 
+      이주       일부       죽음       카터       표현       문제 
+       137        138        139        140        141        214 
+      인권 
+       215 
+
+[[3]]
+  기자 기자석   미국   취재     그 경기장   발생   나이 베테랑   사고 
+     5      7      8     12     15     50     69    108    110    111 
+    세   세상   정도   통신 
+   112    113    115    168 
+
+[[4]]
+        중     아시아       리그       조별       이후       치치 
+        11         13         29         30         32         36 
+    루사일       독일       승리       메시         이     가운데 
+        41         44         48         54         58         59 
+    러시아         끝     북중미         것       도박         등 
+        60         63         71         74         75         76 
+        전       영국       의학     전문가   네덜란드         뒤 
+        79         90         91         92         97        102 
+      시티         얀 에듀케이션     연장전       탈락         번 
+       103        104        105        106        107        109 
+        월       기간       시청   마라도나     지난달       후보 
+       114        129        145        159        160        161 
+      이상       도하       선수         명       본선       이하 
+       166        179        207        211        224        237 
+      성공       일본       처음 
+       248        252        253 
+
+[[5]]
+    국가   대통령     만찬     귀국   여러분     우리     결과 
+       3       19       21       45       51       52      170 
+    국민 대한민국     성과   윤석열     환영     지원   청와대 
+     171      172      173      174      175      176      177 
+    초청   영빈관       저 
+     183      221      222 
+
+[[6]]
+        호재       스페인       조규성         인사       스포츠 
+           1            2            4            6           10 
+        전문       토트넘         황희         선전           윤 
+          14           16           17           18           20 
+        세계         최고         감사           팬     포르투갈 
+          23           24           25           26           27 
+      호날두         선발         호골         기록     네이마르 
+          28           33           34           35           39 
+    잉글랜드       금메달         적설         응원           위 
+          40           42           43           46           47 
+      프랑스         도움           시       경쟁국       글로벌 
+          49           53           57           61           62 
+        도전       마무리         채널         기사         내용 
+          64           65           66           67           68 
+        요약         전망         현지         부상         안면 
+          70           72           73           77           78 
+        착용           수         개막         살인         소화 
+          80           81           82           83           84 
+      스케줄         최근         결장         결정         수술 
+          85           86           87           88           89 
+        주장         투명           후           골       리오넬 
+          93           94           95           96           98 
+      마지막       맞대결         생애         남미   바티스투타 
+          99          100          101          116          117 
+        통산       공격수     그라운드         스타         자신 
+         118          119          120          121          122 
+        전북           개         나라         자리     준준결승 
+         123          124          125          126          127 
+        행진         득점           승         좌절         최다 
+         153          154          155          156          157 
+        펠레         논란         달성           데         등장 
+         158          162          163          164          165 
+          찬         격려       김건희         여사         예정 
+         167          169          178          180          181 
+        이날         빙속           신         여제           新 
+         182          184          185          186          187 
+        결승         격돌 프리미어리그   사회관계망       서비스 
+         188          189          190          191          192 
+      아쉬움         캡틴         후회         당시         분석 
+         193          194          195          196          197 
+          초       뉴스룸           때           분         도중 
+         198          199          200          201          202 
+          드         보도         소식         제외     연합뉴스 
+         203          204          205          206          208 
+        소속         후반       인터뷰           판       뉴시스 
+         209          210          212          213          216 
+        부문         서울         개인         차지         개국 
+         217          218          219          220          223 
+        무대         연장         전반         퇴장         가능 
+         225          226          227          228          229 
+        감동   인스타그램       지휘봉         성적         강호 
+         230          231          232          233          234 
+          대         유럽           바         상대       킬리안 
+         235          236          238          239          240 
+          페           곳         어디         제목       이야기 
+         241          242          243          244          245 
+        진행         출연           말         랭킹         이변 
+         246          247          249          250          251 </code></pre>
+</div>
+<h2 id="기사의-계층적-군집분석">기사의 계층적 군집분석</h2>
+<h3 id="희박-단어의-제거-1">희박 단어의 제거</h3>
+<h3 id="비상사도-행렬-생성-1">비상사도 행렬 생성</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mat</span> <span class='op'>&lt;-</span> <span class='va'>compact_bin</span>
+
+<span class='va'>dist_matrix</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/arules/man/dissimilarity.html'>dist</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/scale.html'>scale</a></span><span class='op'>(</span><span class='va'>mat</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="clustering-2">Clustering</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fit</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/hclust.html'>hclust</a></span><span class='op'>(</span><span class='va'>dist_matrix</span>, method <span class='op'>=</span> <span class='st'>"ward.D"</span><span class='op'>)</span>
+<span class='va'>fit</span>
+</code></pre>
+</div>
+<pre><code>
+Call:
+hclust(d = dist_matrix, method = &quot;ward.D&quot;)
+
+Cluster method   : ward.D 
+Distance         : euclidean 
+Number of objects: 1000 </code></pre>
+</div>
+<h3 id="군집-개수-선정-및-시각화">군집 개수 선정 및 시각화</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>k</span> <span class='op'>&lt;-</span> <span class='fl'>6</span>
+
+<span class='fu'><a href='https://rdrr.io/pkg/arulesViz/man/plot.html'>plot</a></span><span class='op'>(</span><span class='va'>fit</span><span class='op'>)</span>
+<span class='va'>cluster_list</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/rect.hclust.html'>rect.hclust</a></span><span class='op'>(</span><span class='va'>fit</span>, k <span class='op'>=</span> <span class='va'>k</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div class="figure" style="text-align: center">
+<img src="classifier_bert_files/figure-html5/plot_cluster_list-1.png" alt="군집 개수 선정 및 시각화" width="1152" />
+<p class="caption">
+(#fig:plot_cluster_list)군집 개수 선정 및 시각화
+</p>
+</div>
+</div>
+<h3 id="군집의-해석-1">군집의 해석</h3>
+<p>군집별 기사 ID를 추출하고 기사의 개수를 조회합니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>clusters</span> <span class='op'>&lt;-</span> <span class='va'>k</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map</a></span><span class='op'>(</span>
+    <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>{</span>
+      <span class='va'>cluster_list</span><span class='op'>[[</span><span class='va'>x</span><span class='op'>]</span><span class='op'>]</span>
+    <span class='op'>}</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># 기사의 개수</span>
+<span class='va'>clusters</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map_int</a></span><span class='op'>(</span><span class='va'>length</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1]  55  17  30 828  30  40</code></pre>
+</div>
+<h3 id="기사-군집-1">기사 군집 1</h3>
+<h4 id="기사의-제목-조회">기사의 제목 조회</h4>
+<ul>
+<li>20건만 선별 조회</li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>id</span> <span class='op'><a href='https://rdrr.io/pkg/arules/man/match.html'>%in%</a></span> <span class='va'>clusters</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>title_text</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/arules/man/associations-class.html'>head</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>                                                          title_text
+1                이런 몸으로 헤딩까지손흥민 월드컵 출전은 도박이었다
+2   월드컵 조직위원장 이주 노동자 사망에 죽음은 삶의 자연스러운 부분
+3  월드컵 16강 오르자 반전지켜보던 그들이 움직였다 신현보의 딥데이터
+4           월드컵 하차설 불거졌던 호날두 외부세력에 무너지지 않는다
+5   메시 웃었다 아르헨티나 승부차기 끝에 네덜란드 꺾고 4강 2022 카타
+6                       김민선 또 해냈다 빙속 월드컵 3차 500m 금메달
+7                  월드컵 스타 황희찬 손목에 2억짜리 시계어느 브랜드
+8               2022월드컵 일본이 또이번엔 가미카제 티셔츠 들고 응원
+9                    손흥민 월드컵 도박이었다부상 생각보다 훨씬 심각
+10               월드컵 메시 이례적으로 심판 비판그런 주심 투입 안돼
+11                    尹 우리에겐 월드컵 우승팀벤투호 16강 쾌거 격려
+12             월드컵 손흥민 1 가능성 정말 크다고 느껴SNS에 감사인사
+13  메시 웃었다 아르헨티나 승부차기 끝에 네덜란드 꺾고 4강 2022 카타
+14                      김민선 또 해냈다 빙속 월드컵 3차 500m 금메달
+15                 월드컵 스타 황희찬 손목에 2억짜리 시계어느 브랜드
+16              2022월드컵 일본이 또이번엔 가미카제 티셔츠 들고 응원
+17                   손흥민 월드컵 도박이었다부상 생각보다 훨씬 심각
+18               월드컵 메시 이례적으로 심판 비판그런 주심 투입 안돼
+19                    尹 우리에겐 월드컵 우승팀벤투호 16강 쾌거 격려
+20             월드컵 손흥민 1 가능성 정말 크다고 느껴SNS에 감사인사</code></pre>
+</div>
+<h4 id="워드클라우드-그리기">워드클라우드 그리기</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>id</span> <span class='op'><a href='https://rdrr.io/pkg/arules/man/match.html'>%in%</a></span> <span class='va'>clusters</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/bitTA/man/unnest_noun_ngrams.html'>unnest_noun_ngrams</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>description_text</span>, n <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='op'>!</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='st'>"[[a-zA-Z]]+|[[0-9]]+"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>  
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>term</span>, sort <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/nchar.html'>nchar</a></span><span class='op'>(</span><span class='va'>term</span><span class='op'>)</span> <span class='op'>&gt;</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>   
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/ranking.html'>row_number</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>&gt;=</span> <span class='fl'>15</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>wordcloud2</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/wordcloud2/man/wordcloud2.html'>wordcloud2</a></span><span class='op'>(</span>fontFamily <span class='op'>=</span> <span class='st'>"NanumSquare"</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div class="figure" style="text-align: center">
+<div id="htmlwidget-f06e9ca6ee14c9ed4b3f" style="width:672px;height:672px;" class="wordcloud2 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f06e9ca6ee14c9ed4b3f">{"x":{"word":["인사","출전","승부차기","응원","감독","대한민국","메시","귀국","네덜란드","대통령","러시아","이번","잉글랜드","가운데","경기장","금메달","스케이팅","스타디움","스피드","아시아","주장","진출","결과","국민","기자","노력","도박","득점왕","리그","만찬","성과","순간","아쉬움","연속","자신","절대","차지","착용","환영","후회","강에","관광","기간","노틸러스","달성","마스크","모델","보도","브라질","상대","선발","스페인","승리","심판","안면","억대","여자","연맹","예선","이후","조별","주심","최종","크로노그래프","크로아티아","탈락","통신원","투입","호재","강호","개인","격려","골절","국제","기념","나라","녹화","도움","등장","무대","무승부","무패","별명","부상","빙상","상태","선봉","선전","설욕","성공","성적","소속","수퍼","스타","시상대","시티","안전","에듀케이션","영빈관","예상","요원","우려","응원석","이하","일본","적설","전문","제외","준준결승","지난달","직전","차례","차세대","초청","촬영","최고","최다","취재","카타르월드컵","캐나다","통산","티셔츠","파업","포르투갈","프랑스","해소","황제","후보","히어로","가나","갈등","거리","걸출","격돌","격파","결승","결장","결정","경고","경기력","경쟁국","공격","공격수","관련","관심","교체","구체","그림자","글로벌","기여","기자석","기준","기회","나세르","나이","남미","남아공월드컵","노동자","담금질","대약진","대파","도어","도전","도중","도하","독일","동안","득점","득점자","디비전","로이터통신","만족","매체","멀티","명단","발생","방문","방송","베테랑","벤치","복귀","본선","분석","브라질월드컵","비교","빈축","빙속","사건","사고","사망","사용","사우디아라비아","사태","사회","상금","상쾌","생애","선착","성원","세계","세상","소식","수술","스위스","스테핑","스포츠","시각","시도","시청","신사","악마","악재","앞길","약식","에피소드","여정","여제","연대","연장","연장전","오전","올림픽","와이드","외신","위원장","유일","응원전","의학","이날","이달","이벤트","이변","이야기","이적","이주","이탈리아","인스타그램","인터뷰","일부","일정","자리","재단","전남","전남도","전망","전문가","전성기","전후반","정규","정도","조직","종반","좌절","죽음","준우승","중계","중심부","지급","진행","참가","참가국","채널","첫날","최소","최초","출발","출연","치치","카터","캘거리","코르","코스타리카","태극기","토너먼트","토요","토트넘","통신","투명","포상금","포인트","표현","필요","하루","해변","행진","헤딩슛","현지","협박","홍보","홍보관","화물","확인","황희","회견","효과","후반","휴식기","희비"],"freq":[9,9,8,8,7,7,7,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"NanumSquare","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":20,"backgroundColor":"white","gridSize":0,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":[]}</script>
+<p class="caption">
+(#fig:wcloud_news_wcupsim)월드컵 기사의 제목
+</p>
+</div>
+</div>
+<h2 id="topic-분석">Topic 분석</h2>
+<p>기사의 TF 기반의 DTM으로 Topic 분석을 수행합니다. ### 희박 단어의
+제거</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>compact_tf</span> <span class='op'>&lt;-</span> <span class='fu'>tm</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/tm/man/removeSparseTerms.html'>removeSparseTerms</a></span><span class='op'>(</span><span class='va'>dtm_tf</span>, sparse <span class='op'>=</span> <span class='fl'>0.98</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>as.matrix</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>compact_tf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1000  199</code></pre>
+</div>
+<h3 id="otf-계산">OTF 계산</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>otf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>compact_tf</span>, <span class='fl'>2</span>, <span class='va'>sum</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/arules/man/sort.html'>sort</a></span><span class='op'>(</span>decreasing <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="불용어-제거-1">불용어 제거</h3>
+<p>Overall Term Frequency 상위 15개 단어를 불용어로 간주하여
+제거합니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>stop_word</span> <span class='op'>&lt;-</span> <span class='va'>otf</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>20</span><span class='op'>]</span>
+<span class='va'>stop_word</span>
+</code></pre>
+</div>
+<pre><code> [1] &quot;월드컵&quot;       &quot;카타르&quot;       &quot;일&quot;           &quot;팀&quot;          
+ [5] &quot;한국&quot;         &quot;강&quot;           &quot;축구&quot;         &quot;대표&quot;        
+ [9] &quot;년&quot;           &quot;시간&quot;         &quot;브라질&quot;       &quot;아르헨티나&quot;  
+[13] &quot;우승&quot;         &quot;국제축구연맹&quot; &quot;대회&quot;         &quot;강전&quot;        
+[17] &quot;경기&quot;         &quot;손흥민&quot;       &quot;이번&quot;         &quot;감독&quot;        </code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>compact_tf2</span> <span class='op'>&lt;-</span> <span class='va'>compact_tf</span><span class='op'>[</span>, <span class='op'>!</span><span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>compact_tf</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/arules/man/match.html'>%in%</a></span> <span class='va'>stop_word</span><span class='op'>]</span> 
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>compact_tf2</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1000  179</code></pre>
+</div>
+<h3 id="topic-modeling">Topic Modeling</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'>"topicmodels"</span><span class='op'>)</span>
+
+<span class='va'>k</span> <span class='op'>&lt;-</span> <span class='fl'>2</span><span class='op'>:</span><span class='fl'>10</span>
+
+<span class='va'>compact_tf2</span> <span class='op'>&lt;-</span> <span class='va'>compact_tf2</span><span class='op'>[</span><span class='va'>compact_tf2</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='va'>sum</span><span class='op'>)</span> <span class='op'>!=</span> <span class='fl'>0</span>, <span class='op'>]</span>
+
+<span class='va'>models</span> <span class='op'>&lt;-</span> <span class='va'>k</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map</a></span><span class='op'>(</span>
+    <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>{</span>
+      <span class='fu'>topicmodels</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/topicmodels/man/lda.html'>LDA</a></span><span class='op'>(</span><span class='va'>compact_tf2</span>, k <span class='op'>=</span> <span class='va'>x</span>, control <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>seed <span class='op'>=</span> <span class='fl'>123</span><span class='op'>)</span><span class='op'>)</span>
+    <span class='op'>}</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="topic-개수-구하기">Topic 개수 구하기</h3>
+<h4 id="log-likelihood">LOG-LIKELIHOOD</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>log_ikelihood</span> <span class='op'>&lt;-</span> <span class='va'>models</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map_dbl</a></span><span class='op'>(</span><span class='va'>logLik</span><span class='op'>)</span>
+<span class='va'>log_ikelihood</span>
+</code></pre>
+</div>
+<pre><code>[1] -45706.35 -48654.83 -42981.98 -41146.83 -40583.02 -39390.48
+[7] -37974.52 -37694.40 -37073.90</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/which.min.html'>which.max</a></span><span class='op'>(</span><span class='va'>log_ikelihood</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 9</code></pre>
+</div>
+<h4 id="alpha">ALPHA</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>alpha</span> <span class='op'>&lt;-</span> <span class='va'>models</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'>purrr</span><span class='fu'>::</span><span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map_dbl</a></span><span class='op'>(</span><span class='va'>slot</span>, <span class='st'>"alpha"</span><span class='op'>)</span>
+<span class='va'>alpha</span>
+</code></pre>
+</div>
+<pre><code>[1]  0.12945047 40.76406189  0.07686428  0.06227639  0.05763711
+[6]  0.04180651  0.03097738  0.03750115  0.03150149</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/which.min.html'>which.min</a></span><span class='op'>(</span><span class='va'>alpha</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 7</code></pre>
+</div>
+<h3 id="top-beta-단어의-시각화">Top beta 단어의 시각화</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>prob</span> <span class='op'>&lt;-</span> <span class='fu'>tidytext</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>models</span><span class='op'>[[</span><span class='fl'>9</span><span class='op'>]</span><span class='op'>]</span>, matrix <span class='op'>=</span> <span class='st'>"beta"</span><span class='op'>)</span>
+<span class='va'>prob</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 1,790 × 3
+   topic term          beta
+   &lt;int&gt; &lt;chr&gt;        &lt;dbl&gt;
+ 1     1 스페인   3.72e- 44
+ 2     2 스페인   3.72e- 44
+ 3     3 스페인   7.86e-321
+ 4     4 스페인   3.72e- 44
+ 5     5 스페인   3.72e- 44
+ 6     6 스페인 Inf.  e-324
+ 7     7 스페인   3.72e- 44
+ 8     8 스페인   3.72e- 44
+ 9     9 스페인   3.85e- 58
+10    10 스페인   5.24e-  2
+# … with 1,780 more rows</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>top_prob</span> <span class='op'>&lt;-</span> <span class='va'>prob</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>topic</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/top_n.html'>top_n</a></span><span class='op'>(</span><span class='fl'>10</span>, <span class='va'>beta</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>ungroup</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='va'>topic</span>, <span class='op'>-</span><span class='va'>beta</span><span class='op'>)</span>
+<span class='va'>top_prob</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 106 × 3
+   topic term       beta
+   &lt;int&gt; &lt;chr&gt;     &lt;dbl&gt;
+ 1     1 메시     0.0818
+ 2     1 만       0.0655
+ 3     1 승부차기 0.0607
+ 4     1 네덜란드 0.0486
+ 5     1 끝       0.0448
+ 6     1 통산     0.0369
+ 7     1 기록     0.0339
+ 8     1 최다     0.0317
+ 9     1 호골     0.0295
+10     1 프랑스   0.0295
+# … with 96 more rows</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>top_prob</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>term <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/reorder.factor.html'>reorder</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>beta</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>term</span>,  y <span class='op'>=</span> <span class='va'>beta</span>, fill <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>topic</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span>show.legend <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span><span class='va'>topic</span>, scales <span class='op'>=</span> <span class='st'>"free"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_flip.html'>coord_flip</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div class="figure" style="text-align: center">
+<img src="classifier_bert_files/figure-html5/plot_top_prob-1.png" alt="Top beta 단어의 시각화" width="1152" />
+<p class="caption">
+(#fig:plot_top_prob)Top beta 단어의 시각화
+</p>
+</div>
+</div>
+<h3 id="문서에서의-토픽의-비중">문서에서의 토픽의 비중</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_gamma</span> <span class='op'>&lt;-</span> <span class='fu'>tidytext</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>models</span><span class='op'>[[</span><span class='fl'>9</span><span class='op'>]</span><span class='op'>]</span>, matrix <span class='op'>=</span> <span class='st'>"gamma"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>gamma <span class='op'>=</span> <span class='va'>gamma</span> <span class='op'>*</span> <span class='fl'>100</span><span class='op'>)</span>
+
+<span class='va'>news_gamma</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 10,000 × 3
+   document topic gamma
+   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt;
+ 1 40           1 0.431
+ 2 139          1 0.431
+ 3 238          1 0.431
+ 4 337          1 0.431
+ 5 436          1 0.431
+ 6 535          1 0.431
+ 7 634          1 0.431
+ 8 733          1 0.431
+ 9 832          1 0.431
+10 931          1 0.431
+# … with 9,990 more rows</code></pre>
+</div>
+<h3 id="토픽이-포함된-문서-조회">토픽이 포함된 문서 조회</h3>
+<p>토픽 1의 주요 단어는 다음과 같습니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/stats/terms.html'>terms</a></span><span class='op'>(</span><span class='va'>models</span><span class='op'>[[</span><span class='fl'>9</span><span class='op'>]</span><span class='op'>]</span>, <span class='fl'>10</span><span class='op'>)</span><span class='op'>[</span>, <span class='fl'>1</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code> [1] &quot;메시&quot;     &quot;만&quot;       &quot;승부차기&quot; &quot;네덜란드&quot; &quot;끝&quot;       &quot;통산&quot;    
+ [7] &quot;기록&quot;     &quot;최다&quot;     &quot;호골&quot;     &quot;프랑스&quot;  </code></pre>
+</div>
+<p>토픽 1이 95% 이상 포함된 문서를 조회합니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_gamma</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>topic</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>gamma</span> <span class='op'>&gt;=</span> <span class='fl'>95</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>gamma</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 68 × 3
+   document topic gamma
+   &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt;
+ 1 45           1  98.7
+ 2 144          1  98.7
+ 3 243          1  98.7
+ 4 342          1  98.7
+ 5 441          1  98.7
+ 6 540          1  98.7
+ 7 639          1  98.7
+ 8 738          1  98.7
+ 9 837          1  98.7
+10 936          1  98.7
+# … with 58 more rows</code></pre>
+</div>
+<h4 id="번째-기사의-이해">61번째 기사의 이해</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>id</span> <span class='op'><a href='https://rdrr.io/pkg/arules/man/match.html'>%in%</a></span> <span class='st'>"61"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>title_text</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/pull.html'>pull</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;2022월드컵 대표팀 이탈설 호날두 끝까지 싸운다&quot;</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>id</span> <span class='op'><a href='https://rdrr.io/pkg/arules/man/match.html'>%in%</a></span> <span class='st'>"61"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>description_text</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/pull.html'>pull</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;호날두가 월드컵 선발 명단에서 제외되자 페르난두 산투스 포르투갈 대표팀 감독과 이야기를 나눴고, 팀을 떠나겠다고 협박했다는 보도입니다. 앞서 호날두는 카타르 월드컵 16강전에서 선발이 아닌 벤치를 지키다 교체... &quot;</code></pre>
+</div>
+<h3 id="문서의-토픽-분해">문서의 토픽 분해</h3>
+<p>모든 문서는 토픽들의 복합체입니다. 기사 1을 분해하여 토픽의 비율을
+조해해 봅니다.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_gamma</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>document</span> <span class='op'><a href='https://rdrr.io/pkg/arules/man/match.html'>%in%</a></span> <span class='st'>"1"</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>gamma</span><span class='op'>)</span><span class='op'>)</span> 
+</code></pre>
+</div>
+<pre><code># A tibble: 10 × 3
+   document topic  gamma
+   &lt;chr&gt;    &lt;int&gt;  &lt;dbl&gt;
+ 1 1            6 57.1  
+ 2 1            7 19.5  
+ 3 1            1 13.5  
+ 4 1            4  8.38 
+ 5 1           10  0.256
+ 6 1            3  0.256
+ 7 1            2  0.256
+ 8 1            8  0.256
+ 9 1            9  0.256
+10 1            5  0.256</code></pre>
+</div>
+<h3 id="토픽의-단어-분해">토픽의 단어 분해</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>top_prob</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>topic</span> <span class='op'>==</span> <span class='fl'>6</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>beta</span><span class='op'>)</span><span class='op'>)</span> 
+</code></pre>
+</div>
+<pre><code># A tibble: 10 × 3
+   topic term     beta
+   &lt;int&gt; &lt;chr&gt;   &lt;dbl&gt;
+ 1     6 아시아 0.160 
+ 2     6 중     0.103 
+ 3     6 스포츠 0.0674
+ 4     6 전문   0.0609
+ 5     6 채널   0.0559
+ 6     6 경쟁국 0.0510
+ 7     6 뒤     0.0493
+ 8     6 출전   0.0493
+ 9     6 소속   0.0493
+10     6 연맹   0.0493</code></pre>
+</div>
+<h2 id="이진분류-모형">이진분류 모형</h2>
+<h3 id="패키지-로드하기">패키지 로드하기</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidymodels.tidymodels.org'>tidymodels</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://text2vec.org'>text2vec</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://glmnet.stanford.edu'>glmnet</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/topepo/caret/'>caret</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'>bitTA</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="파생변수-만들기">파생변수 만들기</h3>
+<ul>
+<li>연합뉴스 여부
+<ul>
+<li>연합뉴스 기사 : 1</li>
+<li>기타뉴스 기사 : 0</li>
+</ul></li>
+</ul>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_worldcup_yna</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_sim</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>yna_flag <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='fu'>stringr</span><span class='fu'>::</span><span class='fu'><a href='https://stringr.tidyverse.org/reference/str_detect.html'>str_detect</a></span><span class='op'>(</span><span class='va'>originallink</span>, <span class='st'>"www.yna.co.kr"</span><span class='op'>)</span>, <span class='fl'>1</span>, <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>news_worldcup_yna</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>yna_flag</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>ratio <span class='op'>=</span> <span class='va'>n</span> <span class='op'>/</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span> <span class='op'>*</span> <span class='fl'>100</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  yna_flag   n ratio
+1        0 777  77.7
+2        1 223  22.3</code></pre>
+</div>
+<h3 id="불균형-데이터의-언더-샘플링">불균형 데이터의 언더 샘플링</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>n_yna</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_yna</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>yna_flag</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>tally</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/pull.html'>pull</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='va'>n_not_yna</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_yna</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>yna_flag</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>tally</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/pull.html'>pull</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
+<span class='va'>idx_sample</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/arules/man/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='va'>n_not_yna</span><span class='op'>)</span>, size <span class='op'>=</span> <span class='va'>n_yna</span><span class='op'>)</span>
+
+<span class='va'>subset_not_yna</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_yna</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>yna_flag</span> <span class='op'>==</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/ranking.html'>row_number</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/arules/man/match.html'>%in%</a></span> <span class='va'>idx_sample</span><span class='op'>)</span>
+
+<span class='va'>subset_yna</span> <span class='op'>&lt;-</span> <span class='va'>news_worldcup_yna</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>yna_flag</span> <span class='op'>==</span> <span class='fl'>1</span><span class='op'>)</span>
+
+<span class='va'>news_sample_yna</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/bind.html'>bind_rows</a></span><span class='op'>(</span><span class='va'>subset_not_yna</span>, <span class='va'>subset_yna</span><span class='op'>)</span>
+
+<span class='va'>news_sample_yna</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>yna_flag</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  yna_flag   n
+1        0 223
+2        1 223</code></pre>
+</div>
+<h3 id="데이터셋-분리">데이터셋 분리</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
+<span class='va'>news_split</span> <span class='op'>&lt;-</span> <span class='fu'>initial_split</span><span class='op'>(</span><span class='va'>news_sample_yna</span>, strata <span class='op'>=</span> <span class='va'>yna_flag</span><span class='op'>)</span>
+
+<span class='va'>train</span> <span class='op'>&lt;-</span> <span class='fu'>rsample</span><span class='fu'>::</span><span class='fu'><a href='https://rsample.tidymodels.org/reference/initial_split.html'>training</a></span><span class='op'>(</span><span class='va'>news_split</span><span class='op'>)</span>
+<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='fu'>rsample</span><span class='fu'>::</span><span class='fu'><a href='https://rsample.tidymodels.org/reference/initial_split.html'>testing</a></span><span class='op'>(</span><span class='va'>news_split</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>train</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 334   9</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 112   9</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>train</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>yna_flag</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  yna_flag   n
+1        0 167
+2        1 167</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='va'>yna_flag</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>  yna_flag  n
+1        0 56
+2        1 56</code></pre>
+</div>
+<h3 id="tokenize-반복기-정의">tokenize 반복기 정의</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># 일반명사 단위로 토큰을 생성</span>
+<span class='va'>token_fun</span> <span class='op'>&lt;-</span> <span class='fu'>bitTA</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/bitTA/man/morpho_mecab.html'>morpho_mecab</a></span>
+
+<span class='va'>it_train</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/itoken.html'>itoken_parallel</a></span><span class='op'>(</span><span class='va'>train</span><span class='op'>$</span><span class='va'>description_text</span>, 
+                   tokenizer <span class='op'>=</span> <span class='va'>token_fun</span>, 
+                   ids <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>id</span>, 
+                   progressbar <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+<span class='va'>it_test</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/itoken.html'>itoken_parallel</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>description_text</span>, 
+                  tokenizer <span class='op'>=</span> <span class='va'>token_fun</span>, 
+                  ids <span class='op'>=</span> <span class='va'>test</span><span class='op'>$</span><span class='va'>id</span>, 
+                  progressbar <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="frequency-기반의-dtm-생성">Frequency 기반의 DTM 생성</h3>
+<h4 id="vocabulary-생성">VOCABULARY 생성</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/RevolutionAnalytics/doparallel'>doParallel</a></span><span class='op'>)</span>
+
+<span class='va'>nc</span> <span class='op'>&lt;-</span> <span class='fu'>parallel</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/parallel/detectCores.html'>detectCores</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/doParallel/man/registerDoParallel.html'>registerDoParallel</a></span><span class='op'>(</span>cores <span class='op'>=</span> <span class='va'>nc</span><span class='op'>)</span>
+
+<span class='va'>vocab</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/create_vocabulary.html'>create_vocabulary</a></span><span class='op'>(</span><span class='va'>it_train</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>tail</a></span><span class='op'>(</span><span class='va'>vocab</span>, n <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Number of docs: 334 
+0 stopwords:  ... 
+ngram_min = 1; ngram_max = 1 
+Vocabulary: 
+          term term_count doc_count
+ 1: 아르헨티나         78        53
+ 2:       시간         83        83
+ 3:       강전         86        81
+ 4:     브라질         92        69
+ 5:       대표        105        95
+ 6:       축구        129       127
+ 7:         팀        132       113
+ 8:         강        136       118
+ 9:     카타르        379       272
+10:     월드컵        634       328</code></pre>
+</div>
+<h4 id="document-term-matrix-생성하기">DOCUMENT TERM MATRIX
+생성하기</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vectorizer</span> <span class='op'>&lt;-</span>  <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/vectorizers.html'>vocab_vectorizer</a></span><span class='op'>(</span><span class='va'>vocab</span><span class='op'>)</span>
+
+<span class='va'>dtm_train_tf</span> <span class='op'>&lt;-</span> <span class='fu'>text2vec</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/create_dtm.html'>create_dtm</a></span><span class='op'>(</span><span class='va'>it_train</span>, <span class='va'>vectorizer</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_train_tf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 334 559</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dtm_test_tf</span> <span class='op'>&lt;-</span> <span class='fu'>text2vec</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/create_dtm.html'>create_dtm</a></span><span class='op'>(</span><span class='va'>it_test</span>, <span class='va'>vectorizer</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_test_tf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 112 559</code></pre>
+</div>
+<h3 id="n-grams-기반의-dtm-생성">N-Grams 기반의 DTM 생성</h3>
+<h4 id="vocabulary-생성-1">VOCABULARY 생성</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vocab_bigram</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/create_vocabulary.html'>create_vocabulary</a></span><span class='op'>(</span><span class='va'>it_train</span>, ngram <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/arules/man/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1L</span>, <span class='fl'>2L</span><span class='op'>)</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>vocab_bigram</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 1679    3</code></pre>
+</div>
+<h4 id="prune-vocabulary">PRUNE VOCABULARY</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vocab_bigram</span> <span class='op'>&lt;-</span> <span class='va'>vocab_bigram</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/prune_vocabulary.html'>prune_vocabulary</a></span><span class='op'>(</span>term_count_min <span class='op'>=</span> <span class='fl'>10</span>,
+                   doc_proportion_max <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>vocab_bigram</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 285   3</code></pre>
+</div>
+<h4 id="documents-term-matrix-생성">DOCUMENTS TERM MATRIX 생성</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vectorizer_bigram</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/vectorizers.html'>vocab_vectorizer</a></span><span class='op'>(</span><span class='va'>vocab_bigram</span><span class='op'>)</span>
+
+<span class='va'>dtm_train_bigram</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/create_dtm.html'>create_dtm</a></span><span class='op'>(</span><span class='va'>it_train</span>, <span class='va'>vectorizer_bigram</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_train_bigram</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 334 285</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dtm_test_bigram</span>  <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/create_dtm.html'>create_dtm</a></span><span class='op'>(</span><span class='va'>it_test</span>, <span class='va'>vectorizer_bigram</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_test_bigram</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 112 285</code></pre>
+</div>
+<h3 id="tf-idf-기반의-dtm-생성">TF-IDF 기반의 DTM 생성</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tfidf</span> <span class='op'>&lt;-</span> <span class='va'><a href='https://rdrr.io/pkg/text2vec/man/TfIdf.html'>TfIdf</a></span><span class='op'>$</span><span class='fu'>new</span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='va'>dtm_train_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/mlapi/man/fit_transform.html'>fit_transform</a></span><span class='op'>(</span><span class='va'>dtm_train_tf</span>, <span class='va'>tfidf</span><span class='op'>)</span>
+<span class='va'>dtm_test_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/mlapi/man/fit_transform.html'>fit_transform</a></span><span class='op'>(</span><span class='va'>dtm_test_tf</span>, <span class='va'>tfidf</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</div>
+<h3 id="dtm의-크기-비교">DTM의 크기 비교</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_train_tf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 334 559</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_train_bigram</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 334 285</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_train_tfidf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>[1] 334 559</code></pre>
+</div>
+<h3 id="frequency-기반-모델링">Frequency 기반 모델링</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>NFOLDS</span> <span class='op'>&lt;-</span> <span class='fl'>10</span>
+
+<span class='va'>classifier_tf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://glmnet.stanford.edu/reference/cv.glmnet.html'>cv.glmnet</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>dtm_train_tf</span>, y <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>yna_flag</span>, 
+                           family <span class='op'>=</span> <span class='st'>"binomial"</span>,
+                           alpha <span class='op'>=</span> <span class='fl'>1</span>,
+                           parallel <span class='op'>=</span> <span class='cn'>TRUE</span>, 
+                           keep <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h3 id="모델의-이해">모델의 이해</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span>
+
+<span class='va'>coefs_tf</span> <span class='op'>&lt;-</span> <span class='va'>classifier_tf</span><span class='op'>$</span><span class='va'>glmnet.fit</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>lambda</span> <span class='op'>==</span> <span class='va'>classifier_tf</span><span class='op'>$</span><span class='va'>lambda.1se</span><span class='op'>)</span>
+<span class='va'>coefs_tf</span> 
+</code></pre>
+</div>
+<pre><code># A tibble: 110 × 5
+   term         step estimate  lambda dev.ratio
+   &lt;chr&gt;       &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+ 1 (Intercept)    72  -3.16   0.00523     0.947
+ 2 결승전         72  -2.71   0.00523     0.947
+ 3 공격           72  -1.23   0.00523     0.947
+ 4 관중           72  -0.0206 0.00523     0.947
+ 5 근처           72  -3.86   0.00523     0.947
+ 6 물의           72  -0.0143 0.00523     0.947
+ 7 순위           72  -2.70   0.00523     0.947
+ 8 포인트         72  -0.0141 0.00523     0.947
+ 9 新             72  -2.66   0.00523     0.947
+10 기후           72  -0.607  0.00523     0.947
+# … with 100 more rows</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>coefs_tf</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>estimate</span> <span class='op'>&gt;</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/top_n.html'>top_n</a></span><span class='op'>(</span><span class='fl'>10</span>, <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>abs</a></span><span class='op'>(</span><span class='va'>estimate</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>ungroup</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_reorder.html'>fct_reorder</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>estimate</span><span class='op'>)</span>, <span class='va'>estimate</span>, fill <span class='op'>=</span> <span class='va'>estimate</span> <span class='op'>&gt;</span> <span class='fl'>0</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span>alpha <span class='op'>=</span> <span class='fl'>0.8</span>, show.legend <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/coord_flip.html'>coord_flip</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>
+    x <span class='op'>=</span> <span class='cn'>NULL</span>,
+    title <span class='op'>=</span> <span class='st'>"예측에 영향을 주는 모델의 계수들 with TF"</span>,
+    subtitle <span class='op'>=</span> <span class='st'>"네이버 월드컵 관련 뉴스"</span>
+  <span class='op'>)</span>
+</code></pre>
+</div>
+<div class="figure" style="text-align: center">
+<img src="classifier_bert_files/figure-html5/plot_coefs_tf-1.png" alt="예측에 영향을 주는 모델의 계수들 with TF" width="1152" />
+<p class="caption">
+(#fig:plot_coefs_tf)예측에 영향을 주는 모델의 계수들 with TF
+</p>
+</div>
+</div>
+<h3 id="모델의-평가">모델의 평가</h3>
+<h4 id="정오분류-행렬">정오분류 행렬</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>news_tf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/arules/man/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>classifier_tf</span>, <span class='va'>dtm_test_tf</span>, type <span class='op'>=</span> <span class='st'>'class'</span><span class='op'>)</span>
+<span class='va'>cm_tf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>yna_flag</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>news_tf</span><span class='op'>)</span>, positive <span class='op'>=</span> <span class='st'>"1"</span><span class='op'>)</span>
+<span class='va'>cm_tf</span>
+</code></pre>
+</div>
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction  0  1
+         0 56  0
+         1  1 55
+                                          
+               Accuracy : 0.9911          
+                 95% CI : (0.9513, 0.9998)
+    No Information Rate : 0.5089          
+    P-Value [Acc &gt; NIR] : &lt;2e-16          
+                                          
+                  Kappa : 0.9821          
+                                          
+ Mcnemar&#39;s Test P-Value : 1               
+                                          
+            Sensitivity : 1.0000          
+            Specificity : 0.9825          
+         Pos Pred Value : 0.9821          
+         Neg Pred Value : 1.0000          
+             Prevalence : 0.4911          
+         Detection Rate : 0.4911          
+   Detection Prevalence : 0.5000          
+      Balanced Accuracy : 0.9912          
+                                          
+       &#39;Positive&#39; Class : 1               
+                                          </code></pre>
+</div>
+<h4 id="roc-커브">ROC 커브</h4>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'><a href='http://expasy.org/tools/pROC/'>"pROC"</a></span><span class='op'>)</span>
+
+<span class='va'>predictions</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/arules/man/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>classifier_tf</span>, <span class='va'>dtm_test_tf</span>, type <span class='op'>=</span> <span class='st'>'response'</span><span class='op'>)</span>
+<span class='va'>roc_tf</span> <span class='op'>&lt;-</span> <span class='fu'>pROC</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pROC/man/roc.html'>roc</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>yna_flag</span>, <span class='va'>predictions</span><span class='op'>)</span>
+
+<span class='fu'>pROC</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/pROC/man/auc.html'>auc</a></span><span class='op'>(</span><span class='va'>roc_tf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>Area under the curve: 0.9828</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/pROC/man/plot.roc.html'>plot</a></span><span class='op'>(</span><span class='va'>roc_tf</span><span class='op'>)</span>
+</code></pre>
+</div>
+<div class="figure" style="text-align: center">
+<img src="classifier_bert_files/figure-html5/plot_roctf-1.png" alt="ROC 커브" width="1152" />
+<p class="caption">
+(#fig:plot_roctf)ROC 커브
+</p>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>idx</span> <span class='op'>&lt;-</span> <span class='va'>predictions</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/which.min.html'>which.max</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='va'>predictions</span><span class='op'>[</span><span class='va'>idx</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] 0.9895764</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span><span class='op'>[</span><span class='va'>idx</span>, <span class='st'>"description_text"</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;지난달 2022 카타르 월드컵 조별리그 첫 경기를 앞두고 소속팀인 맨체스터 유나이티드(잉글랜드)와 갈등 끝에... 이달 3일 한국과 카타르 월드컵 조별리그 H조 3차전(한국 2-1 승)에서 아쉬운 경기력을 선보이며 후반 20분... &quot;</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>idx</span> <span class='op'>&lt;-</span> <span class='va'>predictions</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
+  <span class='fu'><a href='https://rdrr.io/r/base/which.min.html'>which.min</a></span><span class='op'>(</span><span class='op'>)</span>
+
+<span class='va'>predictions</span><span class='op'>[</span><span class='va'>idx</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] 0.001710634</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>test</span><span class='op'>[</span><span class='va'>idx</span>, <span class='st'>"description_text"</span><span class='op'>]</span>
+</code></pre>
+</div>
+<pre><code>[1] &quot;카타르 월드컵에서 12년 만에 16강 진출에 성공한 한국 축구대표팀의 4년 뒤에도 괜찮은 성적을 거둘 것이라는 외신 보도가 나왔다. ESPN은 9일(한국시간) 아시아 국가 중 2026년 FIFA 월드컵에서 가장 높은 곳에 오를... &quot;</code></pre>
+</div>
+<div class="sourceCode" id="cb65"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
