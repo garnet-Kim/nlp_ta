@@ -314,7 +314,7 @@ fit
 ### Clustering
 k개 군집을 나눕니다.
 
-```{r plot_cluster, tidy=TRUE, fig.align='center', fig.cap="Clustering}
+```{r plot_cluster, tidy=TRUE, fig.align='center', fig.cap="Clustering"}
 k <- 6
 
 plot(fit)
