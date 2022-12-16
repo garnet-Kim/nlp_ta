@@ -9,10 +9,15 @@ author:
     affiliation: 명지대학교 기록정보과학전문대학원 데이터기록전공
     affiliation_url: https://www.mju.ac.kr/record/index.do
 date: "`r Sys.Date()`"
-output: 
-  distill::distill_article:
-    toc: true
-    toc_depth: 3
+output:
+    distill::distill_article:
+      toc: true
+      toc_depth: 3
+
+# 그림 목록 제거
+lof : false
+# 그림 목록의 제목 설정, 기본값은 "List of Abbreviations"
+lof-title : "Acronyms"
 ---
 
 ```{r setup, include=FALSE}
@@ -24,12 +29,14 @@ knitr::opts_chunk$set(echo = TRUE,
                       tidy.opts = list(width.cutoff = 70), 
                       tidy = TRUE)
 knitr::opts_chunk$set(fig.width = 12, fig.height = 9)
+#knitr::opts_chunk$set(dpi=50, out.width="100%")
 
 library(shiny, warn.conflicts = FALSE)
 library(dplyr, warn.conflicts = FALSE)
 library(ggplot2, warn.conflicts = FALSE)
 
 xaringanExtra :: use_panelset()
+# knitr::opts_chunk$get()
 ```
 
 텍스트 데이터 수집
@@ -38,7 +45,7 @@ xaringanExtra :: use_panelset()
 #### 인증키와 키워드 입력
 - client_id, client_secret는 사용자의 API 인증키를 삽입
 
-```{r client, tidy = TRUE}
+```{r client}
 library(koscrap)
 
 # Naver 뉴스 API 인증키
@@ -52,7 +59,7 @@ keyword <- "월드컵"
 #### 날짜 정렬 기준 수집
 - 날짜 기준 정렬로 1,000건의 뉴스를 수집
 
-```{r wcup_date, tidy = TRUE}
+```{r wcup_date}
 n <- 1000
 # 날짜 정렬 수집
 news_worldcup_date <- search_naver(
@@ -64,7 +71,7 @@ news_worldcup_date <- search_naver(
 #### 유사도 정렬 기준 수집
 - 유사도 기준 정렬로 1,000건의 뉴스를 수집
 
-```{r wcup_sim, tidy=TRUE}
+```{r wcup_sim}
 # 유사도 정렬 수집
 news_worldcup_sim <- search_naver(
   keyword, client_id = client_id, client_secret = client_secret, sort = "sim",
@@ -74,14 +81,14 @@ news_worldcup_sim <- search_naver(
 
 - 데이터를 수집하는 시점에 따라 결과가 다르겠지만, 각각 1000건의 데이터가 수집되었습니다. 변수의 개수는 7개입니다.
 
-```{r dim_wcup, tidy=TRUE}
+```{r dim_wcup}
 dim(news_worldcup_date)
 dim(news_worldcup_sim)
 ```
 
 - 앞, 뒤의 몇 건을 조회
 
-```{r inquiry, tidy=TRUE}
+```{r inquiry}
 head(news_worldcup_date)
 tail(news_worldcup_sim)
 ```
@@ -90,7 +97,7 @@ tail(news_worldcup_sim)
 #### 뉴스 빈발 단어
 - 빈발단어를 워드클라우드로 시각화하는 함수를 만듦
 
-```{r wcloud_wcup, tidy=TRUE}
+```{r wcloud_wcup}
 # create UDF
 create_wordcloud <- function(data, remove_n = 5, min_freq = 5, background = "white") {
   data %>% 
@@ -109,7 +116,7 @@ create_wordcloud <- function(data, remove_n = 5, min_freq = 5, background = "whi
 
 - 날짜 기준으로 정렬 수집한 뉴스에 대해서 워드클라우드를 그려 봅니다.
 
-```{r wcloud_wcupdate, tidy=TRUE, fig.align = 'center', fig.width=7, fig.height=7, fig.cap="날짜 기준 월드컵 뉴스"}
+```{r wcloud_wcupdate, fig.align = 'center', fig.width=6, fig.height=6, fig.cap="날짜 기준 월드컵 뉴스"}
 library(bitReport)
 
 news_worldcup_date %>% 
@@ -118,7 +125,7 @@ news_worldcup_date %>%
 
 - 유사도 기준으로 정렬 수집한 뉴스에 대해서 워드클라우드를 그려 봅니다.
 
-```{r wcloud_wcupsim, tidy=TRUE, fig.align='center', fig.width=7, fig.height=7, fig.cap="유사도 기준 월드컵 뉴스"}
+```{r wcloud_wcupsim, fig.align='center', fig.width=6, fig.height=6, fig.cap="유사도 기준 월드컵 뉴스"}
 news_worldcup_sim %>% 
   create_wordcloud(remove_n = 20, min_freq = 2)
 ```
@@ -129,7 +136,7 @@ news_worldcup_sim %>%
 ### 패턴 검색
 유사도 정렬 기준으로 수집한 뉴스 중에서 선수와 감독의 이름이 포함된 기사의 건수를 계산합니다.
 
-```{r per_detect, tidy=TRUE}
+```{r per_detect}
 persons <- c("벤투", "손흥민", "조규성", "이강인", "호날두", "메시")
 
 persons %>% 
@@ -145,7 +152,7 @@ persons %>%
 
 각각의 기사에서 해당 선수와 감독의 이름이 평균 몇 번 등장하는지 계산합니다.
 
-```{r per_count, tidy=TRUE}
+```{r per_count}
 persons <- c("벤투", "손흥민", "조규성", "이강인", "호날두", "메시")
 
 persons %>% 
@@ -166,7 +173,7 @@ Document Term Matrix의 이해
 유사도 정렬 기준 뉴스의 Term Frequency 기반의 DTM과 TF-IDF 기반의 DTM을 생성합니다.
 뉴스 데이터는 문서 아이디로 사용할 변수가 없기 때문에 아이디를 만듧니다.
 
-```{r wcup_dtm, tidy=TRUE}
+```{r wcup_dtm}
 news_worldcup_sim <- news_worldcup_sim %>% 
   mutate(id = row_number())
 ```
@@ -174,7 +181,7 @@ news_worldcup_sim <- news_worldcup_sim %>%
 #### TERM FREQUENCY 기반의 DTM
 - 인명인 고유명사도 함께 추출한 DTM을 만들기 위해서 unnest_noun_ngrams() 함수의 type 인수값에 “noun2”를 사용합니다
 
-```{r dtm_tf, tidy=TRUE}
+```{r dtm_tf}
 library(tidyverse)
 library(bitTA)
 library(tidytext)
@@ -191,7 +198,7 @@ tm::inspect(dtm_tf)
 
 #### TF-IDF 기반의 DTM
 
-```{r dtm_tfidf, tidy=TRUE}
+```{r dtm_tfidf}
 dtm_tfidf <- news_worldcup_sim %>% 
   unnest_noun_ngrams(term, description_text, n = 1, type = "noun2") %>% 
   filter(!str_detect(term, "[[a-zA-Z]]+")) %>%  
@@ -206,7 +213,7 @@ Correlation Analysis
 각각의 선수와 감독별로 상관계수가 0.4 이상인 단어를 추출해봅니다.
 ### Term Frequency
 
-```{r, per_tf, tidy=TRUE}
+```{r, per_tf}
 persons <- c("벤투", "손흥민", "조규성", "이강인", "호날두", "메시")
 
 persons %>% 
@@ -219,7 +226,7 @@ persons %>%
 ---
 ### Binary Term Frequency 기반 DTM 생성
 
-```{r dtm_bin_tf, tidy=TRUE}
+```{r dtm_bin_tf}
 dtm_bin_tf <- news_worldcup_sim %>% 
   unnest_noun_ngrams(term, description_text, n = 1, type = "noun2") %>% 
   filter(!str_detect(term, "[[a-zA-Z]]+")) %>%  
@@ -230,7 +237,7 @@ dtm_bin_tf <- news_worldcup_sim %>%
 ### 불용어 제거
 상위 50위인 단어를 불용어로 처리하여 제거합니다.
 
-```{r stop_words, tidy=TRUE}
+```{r stop_words}
 stop_words <- dtm_bin_tf %>% 
   apply(2, sum) %>% 
   sort(decreasing = TRUE) %>% 
@@ -248,7 +255,7 @@ dtm_bin_tf <- news_worldcup_sim %>%
 
 ### Transactions 생성하기
 
-```{r trans, tidy=TRUE}
+```{r trans}
 library("arules")
 
 trans <- as(dtm_bin_tf %>% as.matrix(), "transactions")
@@ -259,7 +266,7 @@ summary(trans)
 
 ### 연관규칙 생성하기
 
-```{r rules, tidy=TRUE}
+```{r rules}
 rules <- apriori(trans, parameter = list(support = 0.05, conf = 0.6, target = "rules"))
 
 summary(rules)
@@ -269,7 +276,7 @@ arules::inspect(rules[1:5])
 
 ### 연관규칙 시각화하기
 
-```{r rules_plot, tidy=TRUE}
+```{r rules_plot, message = FALSE, warning = FALSE, fig.align='center', out.width="100%", dpi=30}
 library("arulesViz")
 
 plot(rules)
@@ -287,7 +294,7 @@ plot(rules, method = "graph")
 
 ### 희박 단어의 제거
 
-```{r compact_bin, tidy=TRUE}
+```{r compact_bin}
 dim(dtm_bin_tf)
 
 compact_bin <- tm::removeSparseTerms(dtm_bin_tf, sparse = 0.985) %>%
@@ -298,7 +305,7 @@ dim(compact_bin)
 
 ### 비상사도 행렬 생성
 
-```{r dist_matrix, tidy=TRUE}
+```{r dist_matrix}
 mat <- t(compact_bin)
 
 dist_matrix <- dist(scale(mat))
@@ -306,7 +313,7 @@ dist_matrix <- dist(scale(mat))
 
 ### Clustering
 
-```{r hclust, tidy=TRUE}
+```{r hclust}
 fit <- hclust(dist_matrix, method = "ward.D")
 fit
 ```
@@ -314,7 +321,7 @@ fit
 ### Clustering
 k개 군집을 나눕니다.
 
-```{r plot_cluster, tidy=TRUE, fig.align='center', fig.cap="Clustering"}
+```{r plot_cluster, fig.align='center', out.width="100%", dpi=40}
 k <- 6
 
 plot(fit)
@@ -324,7 +331,7 @@ cluster_list <- rect.hclust(fit, k = k)
 ### 군집의 해석
 k개 클러스터를 구성하는 단어들의 목록을 조회합니다.
 
-```{r cluster_list_k, tidy=TRUE}
+```{r cluster_list_k}
 k %>% 
   seq() %>% 
   purrr::map(
@@ -339,7 +346,7 @@ k %>%
 ### 희박 단어의 제거
 ### 비상사도 행렬 생성
 
-```{r mat_dist_matrix, tidy=TRUE}
+```{r mat_dist_matrix}
 mat <- compact_bin
 
 dist_matrix <- dist(scale(mat))
@@ -347,14 +354,14 @@ dist_matrix <- dist(scale(mat))
 
 ### Clustering
 
-```{r fit_hclust, tidy=TRUE}
+```{r fit_hclust}
 fit <- hclust(dist_matrix, method = "ward.D")
 fit
 ```
 
 ### 군집 개수 선정 및 시각화
 
-```{r plot_cluster_list, tidy=TRUE, fig.cap="군집 개수 선정 및 시각화"}
+```{r plot_cluster_list, out.width="100%", dpi=30}
 k <- 6
 
 plot(fit)
@@ -364,7 +371,7 @@ cluster_list <- rect.hclust(fit, k = k)
 ### 군집의 해석
 군집별 기사 ID를 추출하고 기사의 개수를 조회합니다.
 
-```{r cluster_list_cnt, tidy=TRUE}
+```{r cluster_list_cnt}
 clusters <- k %>% 
   seq() %>% 
   purrr::map(
@@ -374,7 +381,7 @@ clusters <- k %>%
   )
 ```
 
-```{r news_cnt, tidy=TRUE}
+```{r news_cnt}
 # 기사의 개수
 clusters %>% 
   purrr::map_int(length)
@@ -384,7 +391,7 @@ clusters %>%
 #### 기사의 제목 조회
 - 20건만 선별 조회
 
-```{r news_wcup_sim, tidy=TRUE}
+```{r news_wcup_sim}
 news_worldcup_sim %>% 
   filter(id %in% clusters[[1]]) %>% 
   select(title_text) %>% 
@@ -393,7 +400,7 @@ news_worldcup_sim %>%
 
 #### 워드클라우드 그리기
 
-```{r wcloud_news_wcupsim, tidy=TRUE, fig.align='center', fig.height=7, fig.width=7, fig.cap="월드컵 기사의 제목"}
+```{r wcloud_news_wcupsim, fig.align='center', fig.height=6, fig.width=6, fig.cap="월드컵 기사의 제목"}
 news_worldcup_sim %>% 
   filter(id %in% clusters[[1]]) %>% 
   unnest_noun_ngrams(term, description_text, n = 1) %>% 
@@ -409,7 +416,7 @@ Topic 분석
 기사의 TF 기반의 DTM으로 Topic 분석을 수행합니다.
 ### 희박 단어의 제거
 
-```{r cmpt_tf, tidy=TRUE}
+```{r cmpt_tf}
 compact_tf <- tm::removeSparseTerms(dtm_tf, sparse = 0.98) %>%
   as.matrix()
 
@@ -418,7 +425,7 @@ dim(compact_tf)
 
 ### OTF 계산
 
-```{r otf, tidy=TRUE}
+```{r otf}
 otf <- apply(compact_tf, 2, sum) %>% 
   sort(decreasing = TRUE) %>% 
   names()
@@ -427,7 +434,7 @@ otf <- apply(compact_tf, 2, sum) %>%
 ### 불용어 제거
 Overall Term Frequency 상위 15개 단어를 불용어로 간주하여 제거합니다.
 
-```{r, stop_cmpt_tf2, tidy=TRUE}
+```{r stop_cmpt_tf2}
 stop_word <- otf[1:20]
 stop_word
 
@@ -437,7 +444,7 @@ dim(compact_tf2)
 
 ### Topic Modeling
 
-```{r tm_cmpt_tf2, tidy=TRUE}
+```{r tm_cmpt_tf2}
 library("topicmodels")
 
 k <- 2:10
@@ -455,7 +462,7 @@ models <- k %>%
 ### Topic 개수 구하기
 #### LOG-LIKELIHOOD
 
-```{r topic, tidy=TRUE}
+```{r topic}
 log_ikelihood <- models %>% 
   purrr::map_dbl(logLik)
 log_ikelihood
@@ -465,7 +472,7 @@ which.max(log_ikelihood)
 
 #### ALPHA
 
-```{r alpha, tidy=TRUE}
+```{r alpha}
 alpha <- models %>% 
   purrr::map_dbl(slot, "alpha")
 alpha
@@ -475,12 +482,12 @@ which.min(alpha)
 
 ### Top beta 단어의 시각화
 
-```{r prop, tidy=TRUE}
+```{r prop}
 prob <- tidytext::tidy(models[[9]], matrix = "beta")
 prob
 ```
 
-```{r top_prob, tidy=TRUE}
+```{r top_prob}
 top_prob <- prob %>% 
   group_by(topic) %>% 
   top_n(10, beta) %>% 
@@ -489,7 +496,7 @@ top_prob <- prob %>%
 top_prob
 ```
 
-```{r plot_top_prob, tidy=TRUE, fig.align='center', fig.cap="Top beta 단어의 시각화"}
+```{r plot_top_prob, fig.align='center', fig.cap="Top beta 단어의 시각화", out.width="100%", dpi=30}
 top_prob %>% 
   mutate(term = reorder(term, beta)) %>% 
   ggplot(aes(x = term,  y = beta, fill = factor(topic))) +
@@ -500,7 +507,7 @@ top_prob %>%
 
 ### 문서에서의 토픽의 비중
 
-```{r news_gamma, tidy=TRUE}
+```{r news_gamma}
 news_gamma <- tidytext::tidy(models[[9]], matrix = "gamma") %>% 
   mutate(gamma = gamma * 100)
 
@@ -510,13 +517,13 @@ news_gamma
 ### 토픽이 포함된 문서 조회
 토픽 1의 주요 단어는 다음과 같습니다.
 
-```{r terms, tidy=TRUE}
+```{r terms}
 terms(models[[9]], 10)[, 1]
 ```
 
 토픽 1이 95% 이상 포함된 문서를 조회합니다.
 
-```{r news_gamma_195, tidy=TRUE}
+```{r news_gamma_195}
 news_gamma %>%
   filter(topic == 1) %>%
   filter(gamma >= 95) %>%
@@ -525,14 +532,14 @@ news_gamma %>%
 
 #### 61번째 기사의 이해
 
-```{r news_wcupsim_61, tidy=TRUE}
+```{r news_wcupsim_61}
 news_worldcup_sim %>% 
   filter(id %in% "61") %>% 
   select(title_text) %>% 
   pull()
 ```
 
-```{r new_wcupsim_61_1, tidy=TRUE}
+```{r new_wcupsim_61_1}
 news_worldcup_sim %>% 
   filter(id %in% "61") %>% 
   select(description_text) %>% 
@@ -542,7 +549,7 @@ news_worldcup_sim %>%
 ### 문서의 토픽 분해
 모든 문서는 토픽들의 복합체입니다. 기사 1을 분해하여 토픽의 비율을 조해해 봅니다.
 
-```{r news_gamma_filter, tidy=TRUE}
+```{r news_gamma_filter}
 news_gamma %>%
   filter(document %in% "1") %>% 
   arrange(desc(gamma)) 
@@ -550,7 +557,7 @@ news_gamma %>%
 
 ### 토픽의 단어 분해
 
-```{r top_prob_filter, tidy=TRUE}
+```{r top_prob_filter}
 top_prob %>% 
   filter(topic == 6) %>% 
   arrange(desc(beta)) 
@@ -560,7 +567,7 @@ top_prob %>%
 ---
 ### 패키지 로드하기
 
-```{r bi_package, tidy=TRUE}
+```{r bi_package}
 library(tidyverse)
 library(tidymodels)
 library(text2vec)
@@ -574,7 +581,7 @@ library(bitTA)
     - 연합뉴스 기사 : 1
     - 기타뉴스 기사 : 0
 
-```{r new_yna, tidy=TRUE}
+```{r new_yna}
 news_worldcup_yna <- news_worldcup_sim %>% 
   mutate(yna_flag = ifelse(stringr::str_detect(originallink, "www.yna.co.kr"), 1, 0))
 
@@ -585,7 +592,7 @@ news_worldcup_yna %>%
 
 ### 불균형 데이터의 언더 샘플링
 
-```{r yna_sampling, tidy=TRUE}
+```{r yna_sampling}
 n_yna <- news_worldcup_yna %>% 
   filter(yna_flag == 1) %>% 
   tally() %>% 
@@ -611,9 +618,10 @@ news_sample_yna <- bind_rows(subset_not_yna, subset_yna)
 news_sample_yna %>% 
   count(yna_flag)
 ```
+
 ### 데이터셋 분리
 
-```{r nes_split, tidy=TRUE}
+```{r nes_split}
 set.seed(123)
 news_split <- initial_split(news_sample_yna, strata = yna_flag)
 
@@ -632,7 +640,7 @@ test %>%
 
 ### tokenize 반복기 정의
 
-```{r token_fun, tidy=TRUE}
+```{r token_fun}
 # 일반명사 단위로 토큰을 생성
 token_fun <- bitTA::morpho_mecab
 
@@ -650,7 +658,7 @@ it_test <- itoken_parallel(test$description_text,
 ### Frequency 기반의 DTM 생성
 #### VOCABULARY 생성
 
-```{r dtmtf_voca, tidy=TRUE}
+```{r dtmtf_voca}
 library(doParallel)
 
 nc <- parallel::detectCores()
@@ -663,7 +671,7 @@ tail(vocab, n = 10)
 
 #### DOCUMENT TERM MATRIX 생성하기
 
-```{r vectorizer, tidy=TRUE}
+```{r vectorizer}
 vectorizer <-  vocab_vectorizer(vocab)
 
 dtm_train_tf <- text2vec::create_dtm(it_train, vectorizer)
@@ -676,14 +684,14 @@ dim(dtm_test_tf)
 ### N-Grams 기반의 DTM 생성
 #### VOCABULARY 생성
 
-```{r voca_bigram, tidy=TRUE}
+```{r voca_bigram}
 vocab_bigram <- create_vocabulary(it_train, ngram = c(1L, 2L))
 dim(vocab_bigram)
 ```
 
 #### PRUNE VOCABULARY
 
-```{r voca_bi_prn, tidy=TRUE}
+```{r voca_bi_prn}
 vocab_bigram <- vocab_bigram %>% 
   prune_vocabulary(term_count_min = 10,
                    doc_proportion_max = 0.5)
@@ -692,7 +700,7 @@ dim(vocab_bigram)
 
 #### DOCUMENTS TERM MATRIX 생성
 
-```{r vectorizer_bigram, tidy=TRUE}
+```{r vectorizer_bigram}
 vectorizer_bigram <- vocab_vectorizer(vocab_bigram)
 
 dtm_train_bigram <- create_dtm(it_train, vectorizer_bigram)
@@ -704,7 +712,7 @@ dim(dtm_test_bigram)
 
 ### TF-IDF 기반의 DTM 생성
 
-```{r tfidf_dtm, tidy=TRUE}
+```{r tfidf_dtm}
 tfidf <- TfIdf$new()
 
 dtm_train_tfidf <- fit_transform(dtm_train_tf, tfidf)
@@ -713,7 +721,7 @@ dtm_test_tfidf <- fit_transform(dtm_test_tf, tfidf)
 
 ### DTM의 크기 비교
 
-```{r dtm_dim, tidy=TRUE}
+```{r dtm_dim}
 dim(dtm_train_tf)
 dim(dtm_train_bigram)
 dim(dtm_train_tfidf)
@@ -721,7 +729,7 @@ dim(dtm_train_tfidf)
 
 ### Frequency 기반 모델링
 
-```{r class_tf, tidy=TRUE}
+```{r class_tf}
 NFOLDS <- 10
 
 classifier_tf <- cv.glmnet(x = dtm_train_tf, y = train$yna_flag, 
@@ -733,7 +741,7 @@ classifier_tf <- cv.glmnet(x = dtm_train_tf, y = train$yna_flag,
 
 ### 모델의 이해
 
-```{r coefs_tf, tidy=TRUE}
+```{r coefs_tf}
 library(broom)
 
 coefs_tf <- classifier_tf$glmnet.fit %>%
@@ -742,7 +750,7 @@ coefs_tf <- classifier_tf$glmnet.fit %>%
 coefs_tf 
 ```
 
-```{r plot_coefs_tf, tidy=TRUE, fig.align='center', fig.cap="예측에 영향을 주는 모델의 계수들 with TF"}
+```{r plot_coefs_tf, fig.align='center', fig.cap="예측에 영향을 주는 모델의 계수들 with TF", out.width="100%", dpi=30}
 coefs_tf %>%
   group_by(estimate > 0) %>%
   top_n(10, abs(estimate)) %>%
@@ -760,7 +768,7 @@ coefs_tf %>%
 ### 모델의 평가
 #### 정오분류 행렬
 
-```{r cm_tf, tidy=TRUE}
+```{r cm_tf}
 news_tf <- predict(classifier_tf, dtm_test_tf, type = 'class')
 cm_tf <- confusionMatrix(factor(test$yna_flag), factor(news_tf), positive = "1")
 cm_tf
@@ -768,7 +776,7 @@ cm_tf
 
 #### ROC 커브
 
-```{r pROC, tidy=TRUE}
+```{r pROC}
 library("pROC")
 
 predictions <- predict(classifier_tf, dtm_test_tf, type = 'response')
@@ -777,11 +785,11 @@ roc_tf <- pROC::roc(test$yna_flag, predictions)
 pROC::auc(roc_tf)
 ```
 
-```{r plot_roctf, tidy=TRUE, fig.align='center', fig.cap="ROC 커브"}
+```{r plot_roctf, fig.align='center', fig.cap="ROC 커브", out.width="100%", dpi=30}
 plot(roc_tf)
 ```
 
-```{r preict_min, tidy=TRUE}
+```{r preict_min}
 idx <- predictions %>% 
   which.max()
 
@@ -790,7 +798,7 @@ predictions[idx]
 test[idx, "description_text"]
 ```
 
-```{r predict_max, tidy=TRUE}
+```{r predict_max}
 idx <- predictions %>% 
   which.min()
 
