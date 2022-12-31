@@ -94,8 +94,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--  https://schema.org/Article -->
-  <meta property="article:published" itemprop="datePublished" content="2022-12-10"/>
-  <meta property="article:created" itemprop="dateCreated" content="2022-12-10"/>
+  <meta property="article:published" itemprop="datePublished" content="2023-01-01"/>
+  <meta property="article:created" itemprop="dateCreated" content="2023-01-01"/>
   <meta name="article:author" content="김동수"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -114,7 +114,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["대통령 연설문 예측"]},{"type":"character","attributes":{},"value":["2022학년도 2학기 텍스트 정보처리와 NLP 수업내용입니다.\n텍스트 분류모형을 개발하고, DTM의 종류별 성능 차이를 비교합니다.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["김동수"]},{"type":"character","attributes":{},"value":["https://github.com/garnet-Kim"]},{"type":"character","attributes":{},"value":["명지대학교 기록정보과학전문대학원 데이터기록전공"]},{"type":"character","attributes":{},"value":["https://www.mju.ac.kr/record/index.do"]}]}]},{"type":"character","attributes":{},"value":["2022-12-10"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["대통령 연설문 예측"]},{"type":"character","attributes":{},"value":["2022학년도 2학기 텍스트 정보처리와 NLP 수업내용입니다.\n텍스트 분류모형을 개발하고, DTM의 종류별 성능 차이를 비교합니다.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url","affiliation","affiliation_url"]}},"value":[{"type":"character","attributes":{},"value":["김동수"]},{"type":"character","attributes":{},"value":["https://github.com/garnet-Kim"]},{"type":"character","attributes":{},"value":["명지대학교 기록정보과학전문대학원 데이터기록전공"]},{"type":"character","attributes":{},"value":["https://www.mju.ac.kr/record/index.do"]}]}]},{"type":"character","attributes":{},"value":["2023-01-01"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[3]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2538,7 +2538,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"대통령 연설문 예측","description":"2022학년도 2학기 텍스트 정보처리와 NLP 수업내용입니다.\n텍스트 분류모형을 개발하고, DTM의 종류별 성능 차이를 비교합니다.","authors":[{"author":"김동수","authorURL":"https://github.com/garnet-Kim","affiliation":"명지대학교 기록정보과학전문대학원 데이터기록전공","affiliationURL":"https://www.mju.ac.kr/record/index.do","orcidID":""}],"publishedDate":"2022-12-10T00:00:00.000+09:00","citationText":"김동수, 2022"}
+{"title":"대통령 연설문 예측","description":"2022학년도 2학기 텍스트 정보처리와 NLP 수업내용입니다.\n텍스트 분류모형을 개발하고, DTM의 종류별 성능 차이를 비교합니다.","authors":[{"author":"김동수","authorURL":"https://github.com/garnet-Kim","affiliation":"명지대학교 기록정보과학전문대학원 데이터기록전공","affiliationURL":"https://www.mju.ac.kr/record/index.do","orcidID":""}],"publishedDate":"2023-01-01T00:00:00.000+09:00","citationText":"김동수, 2023"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2585,7 +2585,7 @@ class="uri">https://github.com/garnet-Kim</a> (명지대학교
 href="https://www.mju.ac.kr/record/index.do"
 class="uri">https://www.mju.ac.kr/record/index.do</a>
   
-<br/>2022-12-10
+<br/>2023-01-01
 </div>
 
 <div class="d-article">
@@ -2635,19 +2635,18 @@ class="uri">https://www.mju.ac.kr/record/index.do</a>
 <h3 id="패키지-로드하기">패키지 로드하기</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># ■ text2vec</span>
-<span class='co'># -텍스트 분류모델 개발을 위해서 텍스트를 벡터화하는  패키지를 설치하고 불러오기</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># ■ text2vec -텍스트 분류모델 개발을 위해서 텍스트를 벡터화하는</span>
+<span class='co'># 패키지를 설치하고 불러오기</span>
 <span class='kw'>if</span> <span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='st'><a href='http://text2vec.org'>"text2vec"</a></span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"text2vec"</span><span class='op'>)</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'><a href='http://text2vec.org'>"text2vec"</a></span><span class='op'>)</span>
+    <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"text2vec"</span><span class='op'>)</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'><a href='http://text2vec.org'>"text2vec"</a></span><span class='op'>)</span>
 <span class='op'>}</span>
 
-<span class='co'># ■ glmnet</span>
-<span class='co'># - 분류모델 개발을 위한 glmnet 패키지를 설치하고 불러오기</span>
+<span class='co'># ■ glmnet - 분류모델 개발을 위한 glmnet 패키지를 설치하고 불러오기</span>
 
 <span class='kw'>if</span> <span class='op'>(</span><span class='op'>!</span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>require</a></span><span class='op'>(</span><span class='st'><a href='https://glmnet.stanford.edu'>"glmnet"</a></span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"glmnet"</span><span class='op'>)</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'><a href='https://glmnet.stanford.edu'>"glmnet"</a></span><span class='op'>)</span>
+    <span class='fu'><a href='https://rdrr.io/r/utils/install.packages.html'>install.packages</a></span><span class='op'>(</span><span class='st'>"glmnet"</span><span class='op'>)</span>
+    <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='st'><a href='https://glmnet.stanford.edu'>"glmnet"</a></span><span class='op'>)</span>
 <span class='op'>}</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
 <span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidymodels.tidymodels.org'>tidymodels</a></span><span class='op'>)</span>
@@ -2664,7 +2663,8 @@ class="uri">https://www.mju.ac.kr/record/index.do</a>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
-<span class='va'>president_split</span> <span class='op'>&lt;-</span> <span class='fu'>rsample</span><span class='fu'>::</span><span class='fu'><a href='https://rsample.tidymodels.org/reference/initial_split.html'>initial_split</a></span><span class='op'>(</span><span class='va'>president_speech</span>, prop <span class='op'>=</span> <span class='fl'>7</span><span class='op'>/</span><span class='fl'>8</span>, strata <span class='op'>=</span> <span class='va'>president</span><span class='op'>)</span>
+<span class='va'>president_split</span> <span class='op'>&lt;-</span> <span class='fu'>rsample</span><span class='fu'>::</span><span class='fu'><a href='https://rsample.tidymodels.org/reference/initial_split.html'>initial_split</a></span><span class='op'>(</span><span class='va'>president_speech</span>, prop <span class='op'>=</span> <span class='fl'>7</span><span class='op'>/</span><span class='fl'>8</span>,
+    strata <span class='op'>=</span> <span class='va'>president</span><span class='op'>)</span>
 
 <span class='va'>president_smpl</span> <span class='op'>&lt;-</span> <span class='fu'>rsample</span><span class='fu'>::</span><span class='fu'><a href='https://rsample.tidymodels.org/reference/initial_split.html'>testing</a></span><span class='op'>(</span><span class='va'>president_split</span><span class='op'>)</span>
 </code></pre>
@@ -2692,15 +2692,9 @@ class="uri">https://www.mju.ac.kr/record/index.do</a>
 <pre class="sourceCode r"><code class="sourceCode r"><span class='co'># 띄어쓰기 단위로 토큰을 생성</span>
 <span class='va'>token_fun</span> <span class='op'>&lt;-</span> <span class='fu'>text2vec</span><span class='fu'>::</span><span class='va'><a href='https://rdrr.io/pkg/text2vec/man/tokenizers.html'>word_tokenizer</a></span>
 
-<span class='va'>it_train</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/itoken.html'>itoken</a></span><span class='op'>(</span><span class='va'>train</span><span class='op'>$</span><span class='va'>doc</span>, 
-                   tokenizer <span class='op'>=</span> <span class='va'>token_fun</span>, 
-                   ids <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>id</span>, 
-                   progressbar <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+<span class='va'>it_train</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/itoken.html'>itoken</a></span><span class='op'>(</span><span class='va'>train</span><span class='op'>$</span><span class='va'>doc</span>, tokenizer <span class='op'>=</span> <span class='va'>token_fun</span>, ids <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>id</span>, progressbar <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
 
-<span class='va'>it_test</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/itoken.html'>itoken</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>doc</span>,
-                  tokenizer <span class='op'>=</span> <span class='va'>token_fun</span>, 
-                  ids <span class='op'>=</span> <span class='va'>test</span><span class='op'>$</span><span class='va'>id</span>, 
-                  progressbar <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+<span class='va'>it_test</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/itoken.html'>itoken</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>doc</span>, tokenizer <span class='op'>=</span> <span class='va'>token_fun</span>, ids <span class='op'>=</span> <span class='va'>test</span><span class='op'>$</span><span class='va'>id</span>, progressbar <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2743,7 +2737,7 @@ Matrix) 구조여야 함. 그래서 vocabulary를 DTM으로 변환하는 작업�
 text2vec::create_dtm() 함수를 사용.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vectorizer</span> <span class='op'>&lt;-</span>  <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/vectorizers.html'>vocab_vectorizer</a></span><span class='op'>(</span><span class='va'>vocab</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vectorizer</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/vectorizers.html'>vocab_vectorizer</a></span><span class='op'>(</span><span class='va'>vocab</span><span class='op'>)</span>
 
 <span class='va'>dtm_train</span> <span class='op'>&lt;-</span> <span class='fu'>text2vec</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/create_dtm.html'>create_dtm</a></span><span class='op'>(</span><span class='va'>it_train</span>, <span class='va'>vectorizer</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_train</span><span class='op'>)</span>
@@ -2799,9 +2793,8 @@ terms를 제거하는 작업이 필요함.</p>
 </blockquote>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vocab_bigram</span> <span class='op'>&lt;-</span> <span class='va'>vocab_bigram</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span> 
-  <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/prune_vocabulary.html'>prune_vocabulary</a></span><span class='op'>(</span>term_count_min <span class='op'>=</span> <span class='fl'>10</span>,
-                   doc_proportion_max <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>vocab_bigram</span> <span class='op'>&lt;-</span> <span class='va'>vocab_bigram</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+    <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/prune_vocabulary.html'>prune_vocabulary</a></span><span class='op'>(</span>term_count_min <span class='op'>=</span> <span class='fl'>10</span>, doc_proportion_max <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>vocab_bigram</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2820,7 +2813,7 @@ terms를 제거하는 작업이 필요함.</p>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dtm_test_bigram</span>  <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/create_dtm.html'>create_dtm</a></span><span class='op'>(</span><span class='va'>it_test</span>, <span class='va'>vectorizer_bigram</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>dtm_test_bigram</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/text2vec/man/create_dtm.html'>create_dtm</a></span><span class='op'>(</span><span class='va'>it_test</span>, <span class='va'>vectorizer_bigram</span><span class='op'>)</span>
 <span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>dtm_test_bigram</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2844,7 +2837,7 @@ TF-IDF 변환은 자동으로 표준화가 되기 때문에 표준화의 잇점�
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>tfidf</span> <span class='op'>&lt;-</span> <span class='va'><a href='https://rdrr.io/pkg/text2vec/man/TfIdf.html'>TfIdf</a></span><span class='op'>$</span><span class='fu'>new</span><span class='op'>(</span><span class='op'>)</span>
 
 <span class='va'>dtm_train_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/mlapi/man/fit_transform.html'>fit_transform</a></span><span class='op'>(</span><span class='va'>dtm_train</span>, <span class='va'>tfidf</span><span class='op'>)</span>
-<span class='va'>dtm_test_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/mlapi/man/fit_transform.html'>fit_transform</a></span><span class='op'>(</span><span class='va'>dtm_test</span>, <span class='va'>tfidf</span><span class='op'>)</span> 
+<span class='va'>dtm_test_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/mlapi/man/fit_transform.html'>fit_transform</a></span><span class='op'>(</span><span class='va'>dtm_test</span>, <span class='va'>tfidf</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2873,14 +2866,9 @@ TF-IDF 변환은 자동으로 표준화가 되기 때문에 표준화의 잇점�
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>NFOLDS</span> <span class='op'>&lt;-</span> <span class='fl'>10</span>
 
-<span class='va'>classifier</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://glmnet.stanford.edu/reference/cv.glmnet.html'>cv.glmnet</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>dtm_train</span>, y <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>president</span>, 
-                        family <span class='op'>=</span> <span class='st'>'multinomial'</span>, 
-                        alpha <span class='op'>=</span> <span class='fl'>1</span>,
-                        type.measure <span class='op'>=</span> <span class='st'>"deviance"</span>,
-                        nfolds <span class='op'>=</span> <span class='va'>NFOLDS</span>,
-                        thresh <span class='op'>=</span> <span class='fl'>0.001</span>,
-                        maxit <span class='op'>=</span> <span class='fl'>1000</span>,
-                        parallel <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='va'>classifier</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://glmnet.stanford.edu/reference/cv.glmnet.html'>cv.glmnet</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>dtm_train</span>, y <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>president</span>, family <span class='op'>=</span> <span class='st'>"multinomial"</span>,
+    alpha <span class='op'>=</span> <span class='fl'>1</span>, type.measure <span class='op'>=</span> <span class='st'>"deviance"</span>, nfolds <span class='op'>=</span> <span class='va'>NFOLDS</span>, thresh <span class='op'>=</span> <span class='fl'>0.001</span>,
+    maxit <span class='op'>=</span> <span class='fl'>1000</span>, parallel <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2889,9 +2877,9 @@ TF-IDF 변환은 자동으로 표준화가 되기 때문에 표준화의 잇점�
 나타났습니다</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>pred_voca</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>classifier</span>, <span class='va'>dtm_test</span>, type <span class='op'>=</span> <span class='st'>'response'</span><span class='op'>)</span><span class='op'>[</span>, , <span class='fl'>1</span><span class='op'>]</span>
-<span class='va'>president_voca</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>pred_voca</span>, <span class='fl'>1</span>, 
-                        <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>pred_voca</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span> <span class='va'>x</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>pred_voca</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>classifier</span>, <span class='va'>dtm_test</span>, type <span class='op'>=</span> <span class='st'>"response"</span><span class='op'>)</span><span class='op'>[</span>, , <span class='fl'>1</span><span class='op'>]</span>
+<span class='va'>president_voca</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>pred_voca</span>, <span class='fl'>1</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>pred_voca</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span>
+    <span class='va'>x</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
 
 <span class='va'>cmat_voca</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>president_voca</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>president</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>cmat_voca</span>
@@ -2932,12 +2920,8 @@ Balanced Accuracy           0.8223        0.8280        0.8377</code></pre>
 <h4 id="모델-생성-1">모델 생성</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>classifier</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://glmnet.stanford.edu/reference/cv.glmnet.html'>cv.glmnet</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>dtm_train_bigram</span>, y <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>president</span>, 
-                        family <span class='op'>=</span> <span class='st'>'multinomial'</span>, 
-                        type.measure <span class='op'>=</span> <span class='st'>"deviance"</span>,
-                        alpha <span class='op'>=</span> <span class='fl'>1</span>,                        
-                        nfolds <span class='op'>=</span> <span class='va'>NFOLDS</span>,
-                        parallel <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>classifier</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://glmnet.stanford.edu/reference/cv.glmnet.html'>cv.glmnet</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>dtm_train_bigram</span>, y <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>president</span>, family <span class='op'>=</span> <span class='st'>"multinomial"</span>,
+    type.measure <span class='op'>=</span> <span class='st'>"deviance"</span>, alpha <span class='op'>=</span> <span class='fl'>1</span>, nfolds <span class='op'>=</span> <span class='va'>NFOLDS</span>, parallel <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
@@ -2946,10 +2930,11 @@ Balanced Accuracy           0.8223        0.8280        0.8377</code></pre>
 모델보다 성능이 좋아졌습니다.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>pred_bigram</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>classifier</span>, <span class='va'>dtm_test_bigram</span>, type <span class='op'>=</span> <span class='st'>'response'</span><span class='op'>)</span><span class='op'>[</span>, , <span class='fl'>1</span><span class='op'>]</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>pred_bigram</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>classifier</span>, <span class='va'>dtm_test_bigram</span>, type <span class='op'>=</span> <span class='st'>"response"</span><span class='op'>)</span><span class='op'>[</span>,
+    , <span class='fl'>1</span><span class='op'>]</span>
 
-<span class='va'>president_bigram</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>pred_bigram</span>, <span class='fl'>1</span>, 
-                          <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>pred_bigram</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span> <span class='va'>x</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
+<span class='va'>president_bigram</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>pred_bigram</span>, <span class='fl'>1</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>pred_bigram</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span>
+    <span class='va'>x</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
 
 <span class='va'>cmat_bigram</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>president_bigram</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>president</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>cmat_bigram</span>
@@ -2990,23 +2975,19 @@ Balanced Accuracy           0.8384        0.8522        0.8213</code></pre>
 <h4 id="모델-생성-2">모델 생성</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>classifier</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://glmnet.stanford.edu/reference/cv.glmnet.html'>cv.glmnet</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>dtm_train_tfidf</span>, y <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>president</span>, 
-                        family <span class='op'>=</span> <span class='st'>'multinomial'</span>, 
-                        nfolds <span class='op'>=</span> <span class='va'>NFOLDS</span>,
-                        thresh <span class='op'>=</span> <span class='fl'>1e-3</span>,
-                        maxit <span class='op'>=</span> <span class='fl'>1e3</span>,
-                        parallel <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>classifier</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://glmnet.stanford.edu/reference/cv.glmnet.html'>cv.glmnet</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>dtm_train_tfidf</span>, y <span class='op'>=</span> <span class='va'>train</span><span class='op'>$</span><span class='va'>president</span>, family <span class='op'>=</span> <span class='st'>"multinomial"</span>,
+    nfolds <span class='op'>=</span> <span class='va'>NFOLDS</span>, thresh <span class='op'>=</span> <span class='fl'>0.001</span>, maxit <span class='op'>=</span> <span class='fl'>1000</span>, parallel <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 </code></pre>
 </div>
 </div>
 <h4 id="모델의-평가-2">모델의 평가</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>pred_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>classifier</span>, <span class='va'>dtm_test_tfidf</span>, type <span class='op'>=</span> <span class='st'>'response'</span><span class='op'>)</span><span class='op'>[</span>, , <span class='fl'>1</span><span class='op'>]</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>pred_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/predict.html'>predict</a></span><span class='op'>(</span><span class='va'>classifier</span>, <span class='va'>dtm_test_tfidf</span>, type <span class='op'>=</span> <span class='st'>"response"</span><span class='op'>)</span><span class='op'>[</span>,
+    , <span class='fl'>1</span><span class='op'>]</span>
 
-<span class='va'>president_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>pred_tfidf</span>, <span class='fl'>1</span>, 
-                         <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>pred_tfidf</span><span class='op'>)</span>
-                         <span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span> <span class='va'>x</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
+<span class='va'>president_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/apply.html'>apply</a></span><span class='op'>(</span><span class='va'>pred_tfidf</span>, <span class='fl'>1</span>, <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span><span class='op'>(</span><span class='va'>pred_tfidf</span><span class='op'>)</span><span class='op'>[</span><span class='fu'><a href='https://rdrr.io/r/base/which.html'>which</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>==</span>
+    <span class='va'>x</span><span class='op'>)</span><span class='op'>]</span><span class='op'>)</span>
 
 <span class='va'>cmat_tfidf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/caret/man/confusionMatrix.html'>confusionMatrix</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>president_tfidf</span><span class='op'>)</span>, <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>test</span><span class='op'>$</span><span class='va'>president</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>cmat_tfidf</span>
@@ -3054,15 +3035,12 @@ Vocabulary 전처리도 필요할 것입니다.</p>
 순서가 바뀔수도 있습니다</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>accuracy</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span><span class='op'>(</span><span class='va'>cmat_voca</span><span class='op'>$</span><span class='va'>overall</span>, 
-                  <span class='va'>cmat_bigram</span><span class='op'>$</span><span class='va'>overall</span>, 
-                  <span class='va'>cmat_tfidf</span><span class='op'>$</span><span class='va'>overall</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='fl'>3</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>accuracy</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span><span class='op'>(</span><span class='va'>cmat_voca</span><span class='op'>$</span><span class='va'>overall</span>, <span class='va'>cmat_bigram</span><span class='op'>$</span><span class='va'>overall</span>, <span class='va'>cmat_tfidf</span><span class='op'>$</span><span class='va'>overall</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+    <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='fl'>3</span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>Method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Frequency"</span>, <span class='st'>"Bigram"</span>, <span class='st'>"TF-IDF"</span><span class='op'>)</span>,
-           <span class='va'>accuracy</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>Accuracy</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>Method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Frequency"</span>, <span class='st'>"Bigram"</span>, <span class='st'>"TF-IDF"</span><span class='op'>)</span>, <span class='va'>accuracy</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span><span class='op'>(</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span><span class='op'>(</span><span class='va'>Accuracy</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+    <span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='op'>)</span>
 </code></pre>
 </div>
 <table>
