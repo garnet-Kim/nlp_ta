@@ -94,7 +94,7 @@ token_fun <- text2vec::word_tokenizer
 it_train <- itoken(train$doc, 
                    tokenizer = token_fun, 
                    ids = train$id, 
-                   progressbar = FALSE)
+                   progressbar = T)
 
 it_test <- itoken(test$doc,
                   tokenizer = token_fun, 
